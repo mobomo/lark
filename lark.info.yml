@@ -1,0 +1,14 @@
+name: Lark
+type: theme
+description: 'An Administrative theme from Mobomo.'
+core: 8.x
+base_theme: none
+libraries:
+  - lark/global-styling
+  - drupal/jquery
+regions:
+  banner: Banner
+  header: Header
+  content: Content
+  sidebar: Sidebar
+  footer: Footer
