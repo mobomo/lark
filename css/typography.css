@@ -1,0 +1,83 @@
+* {
+    font-family: Oxygen, Arial, sans-serif;
+}
+
+h1,
+.h1 {
+    font-size: 2.281rem;
+    line-height: 1.3rem;
+}
+
+h2,
+.h2 {
+    font-size: 1.802rem;
+    line-height: 1.3rem;
+}
+
+h3,
+.h3 {
+    font-size: 1.602rem;
+    line-height: 1.3rem;
+}
+
+h4,
+.h4 {
+    font-size: 1.424rem;
+    line-height: 1.3rem;
+}
+
+h5,
+.h5 {
+    font-size: 1.266rem;
+    line-height: 1.3rem;
+}
+
+h6,
+.h6 {
+    font-size: 1.125rem;
+    line-height: 1.3rem;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5rem;
+}
+
+.small {
+    font-size: 0.0889rem;
+    line-height: 1.5rem;
+}
+
+.xsmall {
+    font-size: 0.79rem;
+    line-height: 1.5rem;
+}
+
+.annotation {
+    font-size: 0.702rem;
+    line-height: 1.5rem;
+}
+
+/* Colors */
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    color: #222330;
+}
+
+p {
+    color: #545560;
+}
+
+a {
+    color: #0072c5;
+}

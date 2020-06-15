@@ -9,7 +9,6 @@ table,
 
 table a,
 .table a {
-  color: #0072c5;
   text-decoration: none;
 }
 
@@ -54,11 +53,6 @@ th .tablesort {
   display: none;
 }
 
-tr,
-.tr {
-
-}
-
 tr:hover,
 .tr:hover {
   background-color: rgba(0, 114, 197, 0.15);
@@ -71,11 +65,6 @@ td,
   border-collapse: collapse;
   border-spacing: 0;
   padding: 12px;
-}
-
-td a,
-.td a {
-  color: #0072c5;
 }
 
 td a:hover,
