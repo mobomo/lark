@@ -1,0 +1,46 @@
+// respond-to()
+//
+// Wrapper for easier media queries
+//
+// @requires {variable} name
+// @param {String} $name              - Value of $breakpoints map.
+// @throws Nov value found for `$breakpoint`. Please make sure it is defined in `$breakpoints` map.
+// @return {String} - A media query for wrapping the content added.
+@mixin respond-to($name) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $name) {
+      // Prints a media query based on the value
+      @media screen and (min-width: map-get($breakpoints, $name)) {
+        @content;
+      }
+    } @else {
+      // If the key doesn't exist in the map
+      @warn 'Unfortunately, no value could be retrieved from `#{$breakpoints}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
+    }
+  }
+
+// Typography Mixins
+// -----------------------------------------------------------------------------
+
+// font()
+//
+// Set the font-family, weight and style
+//
+// @param {String} $group             - @see $fonts and $fallback-fonts in _variables.scss
+// @param {String} $weight-variant    - Keyword for the font weight. @see font-weights in _variables.scss
+// @param {String} $style-variant     - Whether to use normal or italic font variant
+@mixin font($group: serif, $weight-variant: reg, $style-variant: normal) {
+    font-family: map-get($fonts, $group);
+    font-weight: map-deep-get($font-weights, $group, $weight-variant);
+    font-style: $style-variant;
+  }
+
+  // Grid mixins
+@mixin col($column-count) {
+  @if $column-count == 2 {
+    width: 16.6666666666%;
+  }
+  @if $column-count == 4 {
+    width: 33.33%;
+  }
+}

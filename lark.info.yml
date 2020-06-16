@@ -6,6 +6,7 @@ base_theme: none
 libraries:
   - lark/global-styling
   - drupal/jquery
+  - core/normalize
 regions:
   banner: Banner
   header: Header

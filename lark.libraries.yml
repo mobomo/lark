@@ -3,8 +3,6 @@ global-styling:
   css:
     theme:
       '//fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap:': { type: external, minified: true }
-      css/layout.css: {}
-      css/typography: {}
-      css/tables.css: {}
+      css/main.css: {}
   js:
     js/example.js: {}

@@ -1,0 +1,29 @@
+{
+  "name": "lark",
+  "version": "1.0.0",
+  "description": "An administration theme for Drupal by Mobomo",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cli": "^2.3.0",
+    "gulp-sass": "^4.1.0"
+  },
+  "scripts": {
+    "style": "gulp sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mobomo/lark.git"
+  },
+  "keywords": [
+    "Drupal"
+  ],
+  "author": "Carwin Young",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mobomo/lark/issues"
+  },
+  "homepage": "https://github.com/mobomo/lark#readme"
+}

@@ -1,0 +1,41 @@
+label,
+.label {
+  @extend %small;
+  @include font(sans, bold);
+
+  &.form-required:after {
+    content: ' *';
+    color: $red;
+  }
+}
+
+input[type="text"],
+.form_textfield,
+textarea,
+.form-textarea {
+  box-sizing: border-box;
+  cursor: auto;
+  display: block;
+  margin-bottom: $spacing-small;
+  padding: $spacing-large 10px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $borders;
+  background-color: $white;
+  color: $dark-gray;
+  font-size: 16px;
+  line-height: 1rem;
+  width: 100%;
+
+  &:focus {
+    border-style: solid;
+    border-color: $primary;
+    box-shadow: 0 0 0 2px $primary;
+    outline: none;  
+  }
+
+  &::placeholder {
+    color: $gray;
+  }
+
+}

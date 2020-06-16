@@ -1,0 +1,28 @@
+// map-deep-get()
+//
+// Fetch nested maps.
+//
+// @param {Map} $map - Map
+// @param {Arglist} $keys - Keys to fetch
+//
+// @return {*}
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+      $map: map-get($map, $key);
+    }
+  
+    @return $map;
+  }
+  
+  // get-line-height()
+  //
+  // Get a unitless line-height value from the px value of line-height and font-size
+  //
+  // @param {string} - font-size
+  // @param {string} - line-height
+  //
+  // @return {*}
+  @function get-line-height($font-size, $line-height) {
+    @return $line-height / $font-size;
+  }
+  

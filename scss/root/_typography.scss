@@ -1,5 +1,5 @@
 * {
-    font-family: Oxygen, Arial, sans-serif;
+    @include font(sans);
 }
 
 h1,
@@ -43,17 +43,21 @@ p {
     line-height: 1.5rem;
 }
 
+%small,
 .small {
-    font-size: 0.0889rem;
+    font-size: 0.889rem;
     line-height: 1.5rem;
 }
 
+%xsmall,
 .xsmall {
     font-size: 0.79rem;
     line-height: 1.5rem;
 }
 
-.annotation {
+%annotation,
+.annotation,
+.description {
     font-size: 0.702rem;
     line-height: 1.5rem;
 }
@@ -71,13 +75,13 @@ h5,
 .h5,
 h6,
 .h6 {
-    color: #222330;
+    color: $headers;
 }
 
 p {
-    color: #545560;
+    color: $text;
 }
 
 a {
-    color: #0072c5;
+    color: $primary;
 }

@@ -1,0 +1,40 @@
+// colors
+$blue: #0072c5;
+$dark-gray: #222330;
+$gray: #545560;
+$light-gray: #d7d7df;
+$medium-gray: #8e929c;
+$white: #ffffff;
+$red: #cf3a31;
+
+
+$primary: $blue; // Designers envision this being configurable.
+
+$key-actions: $primary;
+$headers: $dark-gray;
+$text: $gray;
+$background: $white;
+$background-secondary: $light-gray;
+$borders: $medium-gray;
+$error: $red;
+
+// margins
+$spacing-large: 16px;
+$spacing-medium: 12px;
+$spacing-small: 6px;
+
+// fonts
+$base-include-path: '../fonts/' !default;
+$include-base-fonts: true !default;
+$base-sans-serif: Arial, Verdana, sans-serif !default;
+
+$fonts: (
+  'sans': ('Oxygen', #{$base-sans-serif}),
+) !default;
+
+$font-weights: (
+  'sans': (
+    reg: 400,
+    bold: 700,
+  )
+) !default;

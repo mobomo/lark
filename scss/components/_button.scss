@@ -1,0 +1,36 @@
+%button,
+.button {
+  @include font(sans, bold);
+  background-color: $primary;
+  box-shadow: none;
+  color: $white;
+  min-height: 48px;
+  padding: $spacing-large ($spacing-medium * 2);
+  line-height: 1rem;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.21));
+  }
+
+}
+
+%button--secondary,
+.button--secondary {
+    @extend %button;
+    background-color: $light-gray;
+    color: $dark-gray;
+
+    &:hover {
+      background-image: linear-gradient(180deg, rgba(142, 146, 156, 0.27), rgba(142, 146, 156, 0.27));
+    }
+}
+
+// Drupal extensions.
+// We'll use these until we update the templates to use better classes.
+.button.form-submit {
+  @extend %button--secondary;
+}
