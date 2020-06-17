@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
   margin-bottom: $spacing-medium * 2;
   border-radius: 8px;
   box-shadow: 0 0 11px 0 rgba(10, 10, 14, 0.2);
@@ -10,16 +11,16 @@
   padding: $spacing-large;
 }
 
-%exposed-form-item {
+%exposed-form__item,
+.exposed-form__item {
   flex: auto;
 }
 
 // Extensions
 .views-exposed-form {
-  @extend %exposed-form;
 
   .form-item {
-    @extend %exposed-form-item;
+    @extend %exposed-form__item;
   }
 
 }

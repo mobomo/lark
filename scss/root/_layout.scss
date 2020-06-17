@@ -15,7 +15,7 @@
 }
 
 .l-sidebar {
-  flex: 20%;
+  width: 300px;
 
 }
 
@@ -25,10 +25,23 @@
 
 // grid
 // @TODO: Actually define and utilize the grid system presented in webflow.
-%col-4 {
-  width: 33.33%;
+.grid {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-%col-2 {
-  width: 16.66666666666%;
+.col {
+  padding: 1em;
+}
+
+.col-2 {
+  width: 16.666666666666668%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
 }
