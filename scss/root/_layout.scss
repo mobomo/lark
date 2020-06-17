@@ -1,32 +1,34 @@
 * {
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-  }
-  
-  .l-page {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  
-  .l-banner {
-    flex: 0 0 100%;
-  }
-  
-  .l-sidebar {
-    flex: 20%;
-  }
-  
-  .l-content {
-    flex: 80%;
-  }
-  
-  // grid
-  %col-4 {
-    width: 33.33%;
-  }
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
 
-  %col-2 {
-    width: 16.66666666666%;
-  }
+.l-page {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.l-banner {
+  flex: 0 0 100%;
+}
+
+.l-sidebar {
+  flex: 20%;
+
+}
+
+.l-content {
+  flex: 80%;
+}
+
+// grid
+// @TODO: Actually define and utilize the grid system presented in webflow.
+%col-4 {
+  width: 33.33%;
+}
+
+%col-2 {
+  width: 16.66666666666%;
+}

@@ -2,79 +2,98 @@ table,
 .table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 16px;
   line-height: 20px;
+  font-size: 16px;
 }
 
-table a,
-.table a {
-  text-decoration: none;
+table,
+.table {
+
+  a {
+    text-decoration: none;
+  }
+
 }
 
 tbody,
 .tbody {
-  vertical-align: middle;
   border-color: inherit;
+  vertical-align: middle;
 }
 
 th,
 .th {
-  box-shadow: inset 0 -2px 0 0 $light-gray;
-  vertical-align: inherit;
   border-color: inherit;
-  text-align: left;
+  box-shadow: inset 0 -2px 0 0 $light-gray;
   padding: $spacing-small $spacing-large;
+  vertical-align: inherit;
+  text-align: left;
+
+  &:hover,
+  &:focus {
+    box-shadow: inset 0 -4px 0 0 $primary;
+    color: $primary;
+
+    a {
+      color: $primary;
+    }
+
+  }
+
+  &.tablesort {
+    display: none;
+  }
+
+  a {
+
+    &[title^='sort'] {
+
+      &:before {
+        display: inline-block;
+        margin-right: 3px;
+        background-image: url('/themes/contrib/lark/images/icon-sort.svg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 12px;
+        height: 12px;
+        content: '';
+      }
+
+    }
+
+  }
+
 }
 
-th a[title^="sort"]:before {
-  display: inline-block;
-  height: 12px;
-  width: 12px;
-  content: '';
-  background-image: url('/themes/contrib/lark/images/icon-sort.svg');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  margin-right: 3px;
-}
+tr,
+.tr {
 
-th:hover,
-th:focus {
-  box-shadow: inset 0 -4px 0 0 $primary;
-  color: $primary;
-}
+  &:hover {
+    background-color: rgba($primary, 0.15);
+  }
 
-th:hover a,
-th:focus a {
-  color: $primary;
-}
-
-th .tablesort {
-  display: none;
-}
-
-tr:hover,
-.tr:hover {
-  // background-color: rgba(0, 114, 197, 0.15);
-  background-color: rgba($primary, 0.15);
 }
 
 td,
 .td {
   display: table-cell;
-  vertical-align: inherit;
+  padding: $spacing-medium;
   border-collapse: collapse;
   border-spacing: 0;
-  padding: $spacing-medium;
+  vertical-align: inherit;
+
+  a {
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+  }
+
+  &.views-field-title {
+    font-weight: 700;
+  }
+
 }
 
-td a:hover,
-td a:focus,
-.td a:hover,
-.td a:focus {
-  text-decoration: underline;
-}
-
-td.views-field-title,
-.td.views-field-title {
-  font-weight: 700;
-}

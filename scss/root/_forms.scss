@@ -3,35 +3,37 @@ label,
   @extend %small;
   @include font(sans, bold);
 
-  &.form-required:after {
-    content: ' *';
-    color: $red;
+  &.form-required {
+
+    &:after {
+      color: $red;
+      content: ' *';
+    }
+
   }
+
 }
 
-input[type="text"],
-.form_textfield,
-textarea,
-.form-textarea {
-  box-sizing: border-box;
-  cursor: auto;
+%text-input {
   display: block;
   margin-bottom: $spacing-small;
-  padding: $spacing-large 10px;
   border-width: 1px;
   border-style: solid;
   border-color: $borders;
   background-color: $white;
+  cursor: auto;
+  padding: $spacing-large 10px;
+  width: 100%;
+  line-height: 1rem;
   color: $dark-gray;
   font-size: 16px;
-  line-height: 1rem;
-  width: 100%;
+  box-sizing: border-box;
 
   &:focus {
+    outline: none;
     border-style: solid;
     border-color: $primary;
     box-shadow: 0 0 0 2px $primary;
-    outline: none;  
   }
 
   &::placeholder {
@@ -39,3 +41,23 @@ textarea,
   }
 
 }
+
+// The class is a core drupal class, have linter igonre it until we modify
+// templates to correct it.
+//
+// sass-lint:disable class-name-format
+.form_textfield,
+textarea,
+.form-textarea {
+  @extend %text-input;
+}
+// sass-lint:enable class-name-format
+
+input {
+
+  &[type='text'] {
+    @extend %text-input;
+  }
+
+}
+

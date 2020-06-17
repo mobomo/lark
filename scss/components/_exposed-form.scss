@@ -4,25 +4,22 @@
   flex-direction: row;
   flex-wrap: wrap;
   margin-bottom: $spacing-medium * 2;
-  padding: $spacing-large;
   border-radius: 8px;
-  background-color: $white;
   box-shadow: 0 0 11px 0 rgba(10, 10, 14, 0.2);
+  background-color: $white;
+  padding: $spacing-large;
 }
 
 %exposed-form-item {
-
+  flex: auto;
 }
 
 // Extensions
 .views-exposed-form {
-  @extend %exposed-form;  
-}
+  @extend %exposed-form;
 
-.views-exposed-form .form-item {
-  @include col(2);
-}
+  .form-item {
+    @extend %exposed-form-item;
+  }
 
-.views-exposed-form .form-item-textfield {
-  @include col(4);
 }
