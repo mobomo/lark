@@ -4,23 +4,13 @@
   -moz-box-sizing: border-box;
 }
 
-.l-page {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.l-banner {
-  flex: 0 0 100%;
-}
-
 .l-sidebar {
+  position: relative;
   width: 300px;
-
 }
 
 .l-content {
-  flex: 80%;
+  flex: 1;
 }
 
 // grid
@@ -28,6 +18,13 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
+}
+
+.grid--full {
+  display: flex;
+  position: relative;
+  align-items: stretch;
+  padding: 1em;
 }
 
 .col {

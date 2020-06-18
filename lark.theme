@@ -3,6 +3,10 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_form_alter().
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
  */
 function lark_forms_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   lark_forms_attach_form_id($form, $form_id);
@@ -15,34 +19,72 @@ function lark_forms_form_alter(&$form, FormStateInterface $form_state, $form_id)
 
 /**
  * Implements hook_theme_suggestions_form_alter().
+ *
+ * @param array $suggestions
+ * @param array $variables
  */
 function lark_theme_suggestions_form_alter(array &$suggestions, array $variables) {
   // Add form suggestions for form--form-id.html.twig.
-  $suggestions[] = 'form__' . str_replace('-', '_', $variables['element']['#form_id']);
-  $suggestions[] = 'form__' . str_replace('-', '_', $variables['element']['#form_id']) . '__' . str_replace('-', '_', $variables['element']['#id']);
+  $element = $variables['element'];
+  $suggestions[] = 'form__' . str_replace('-', '_', $element['#form_id']);
+  $suggestions[] = 'form__' . str_replace('-', '_', $element['#form_id']) . '__' . str_replace('-', '_', $element['#id']);
 }
 
 /**
- * Implements hook_theme_suggestions_views_exposed_form_alter()
+ * Implements hook_theme_suggestions_container_alter().
+ *
+ * @param array $suggestions
+ * @param array $variables
  */
-// function lark_theme_suggestions_form_element_alter(array &$suggestions, array $variables) {
-//   // kint($variables['element']);
-//   $suggestions[] = 'form-element__' . str_replace('-', '_', $variables['element']['#attributes']['data-twig-suggestions']);
-// }
+function lark_theme_suggestions_container_alter(array &$suggestions, array $variables) {
+  $element = $variables['element'];
+  if (isset($element['#type']) && $element['#type'] != 'container') {
+    $suggestions[] = 'container__' . str_replace('-', '_', $element['#type']);
+    $suggestions[] = 'container__' . str_replace('-', '_', $element['#type']) . '__' . str_replace('-', '_', $element['#attributes']['data-twig-suggestion']);
+  }
+  if (isset($element['#type']) && $element['#type'] == 'container' && isset($element['children']['#type'])) {
+    $suggestions[] = 'container__' . str_replace('-', '_', $element['children']['#type']);
+  }
+  if (isset($variables['element']['#type']) && isset($element['#name'])) {
+    $suggestions[] = 'container__' . str_replace('-', '_', $element['#type']) . '__' . str_replace('-', '_', $element['#name']);
+  }
+  if (isset($variables['element']['#type']) && isset($element['#name']) && isset($element['#display_id'])) {
+    $suggestions[] = 'container__' . str_replace('-', '_', $element['#type']) . '__' . str_replace('-', '_', $element['#name']) . '__' . str_replace('-', '_', $element['#display_id']);
+  }
+
+}
 
 /**
  * Implements hook_theme_suggestions_input_alter().
- * */
-function lark_theme_suggestions_input_alter(&$suggestions, array $variables) {
+ *
+ * @param $suggestions
+ * @param array $variables
+ */
+function lark_theme_suggestions_input_alter(array &$suggestions, array $variables) {
   $element = $variables['element'];
   if (isset($element['#attributes']['data-twig-suggestion'])) {
     $suggestion_suffix = str_replace(['-'], '_', $element['#attributes']['data-twig-suggestion']);
-    $suggestions[] = 'input__' . $element['#type'] . '__' . $suggestion_suffix;
+    $suggestions[] = 'input__' . str_replace('-', '_', $element['#type']) . '__' . $suggestion_suffix;
   }
 }
 
 /**
+ * Implements hook_theme_suggestions_select_alter().
+ *
+ * @param array $suggestions
+ * @param array $variables
+ */
+function lark_theme_suggestions_select_alter(array &$suggestions, array $variables) {
+  $element = $variables['element'];
+  $suggestions[] = 'select__' . str_replace('-', '_', $element['#attributes']['data-twig-suggestion']);
+}
+
+/**
  * Implements hook_form_alter().
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
  */
 function lark_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
@@ -54,51 +96,51 @@ function lark_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 }
 
 /**
- * Implements hook_template_preprocess_form_element().
- */
-function lark_template_preprocess_form_element(&$variables) {
-  $element = $variables['element'];
-
-  // @TODO: Here we should programatically set all the checkbox label positions to after the checkbox so we can style them using the + selector in CSS.
-}
-
-
-/**
  * Implements hook_theme_suggestions_form_element().
+ *
+ * @param array $suggestions
+ * @param array $variables
  */
 function lark_theme_suggestions_form_element_alter(array &$suggestions, array $variables) {
-  $suggestions[] = 'form_element__type__' . str_replace('-', '_', $variables['element']['#type']);
-  $suggestions[] = 'form_element__type__' . str_replace('-', '_', $variables['element']['#type']) . '__' . str_replace('-', '_', $variables['element']['#attributes']['data-twig-suggestion']);
+  $element = $variables['element'];
 
-  if (isset($variables['element']['#form_id'])) {
-    $suggestions[] = 'form_element__form_id__' . str_replace('-', '_', $variables['element']['#form_id']);
-    $suggestions[] = 'form_element__' . str_replace('-', '_', $variables['element']['#form_id']) . '__' . str_replace('-', '_', $variables['element']['#type']);
+  $suggestions[] = 'form_element__type__' . str_replace('-', '_', $element['#type']);
+  $suggestions[] = 'form_element__type__' . str_replace('-', '_', $element['#type']) . '__' . str_replace('-', '_', $element['#attributes']['data-twig-suggestion']);
+
+  if (isset($element['#form_id'])) {
+    $suggestions[] = 'form_element__form_id__' . str_replace('-', '_', $element['#form_id']);
+    $suggestions[] = 'form_element__' . str_replace('-', '_', $element['#form_id']) . '__' . str_replace('-', '_', $element['#type']);
   }
 
-  if (isset($variables['element']['#views_display_id'])) {
-    $suggestions[] = 'form_element__' . str_replace('-', '_', $variables['element']['#form_id']) . '__' . str_replace('-', '_', $variables['element']['#views_display_id']);
-    $suggestions[] = 'form_element__' . str_replace('-', '_', $variables['element']['#form_id']) . '__' . str_replace('-', '_', $variables['element']['#views_display_id']) . '__' . str_replace('-', '_', $variables['element']['#type']);
+  if (isset($element['#views_display_id'])) {
+    $suggestions[] = 'form_element__' . str_replace('-', '_', $element['#form_id']) . '__' . str_replace('-', '_', $element['#views_display_id']);
+    $suggestions[] = 'form_element__' . str_replace('-', '_', $element['#form_id']) . '__' . str_replace('-', '_', $element['#views_display_id']) . '__' . str_replace('-', '_', $element['#type']);
   }
 }
 
 /**
  * Implements hook_theme_suggestions_form_element_label().
+ *
+ * @param array $suggestions
+ * @param array $variables
  */
 function lark_theme_suggestions_form_element_label_alter(array &$suggestions, array $variables) {
-  if (isset($variables['element']['#form_element_type'])) {
-    $suggestions[] = 'form_element_label__type__' . str_replace('-', '_', $variables['element']['#form_element_type']);
+  $element = $variables['element'];
+
+  if (isset($element['#form_element_type'])) {
+    $suggestions[] = 'form_element_label__type__' . str_replace('-', '_', $element['#form_element_type']);
   }
-  if (isset($variables['element']['#form_id'])) {
-    $suggestions[] = 'form_element_label__form-id__' . str_replace('-', '_', $variables['element']['#form_id']);
+  if (isset($element['#form_id'])) {
+    $suggestions[] = 'form_element_label__form-id__' . str_replace('-', '_', $element['#form_id']);
   }
-  if (isset($variables['element']['#form_element_type']) && isset($variables['element']['#form_id'])) {
-    $suggestions[] = 'form_element_label__' . str_replace('-', '_', $variables['element']['#form_id']) . '__' . str_replace('-', '_', $variables['element']['#form_element_type']);
+  if (isset($element['#form_element_type']) && isset($element['#form_id'])) {
+    $suggestions[] = 'form_element_label__' . str_replace('-', '_', $element['#form_id']) . '__' . str_replace('-', '_', $element['#form_element_type']);
   }
-  if (isset($variables['element']['#views_display_id'])) {
-    $suggestions[] = 'form_element_label__views_exposed_form__' . str_replace('-', '_', $variables['element']['#views_display_id']);
+  if (isset($element['#views_display_id'])) {
+    $suggestions[] = 'form_element_label__views_exposed_form__' . str_replace('-', '_', $element['#views_display_id']);
   }
-  if (isset($variables['element']['#views_display_id']) && isset($variables['element']['#form_id'])) {
-    $suggestions[] = 'form_element_label__views_exposed_form__' . str_replace('-', '_', $variables['element']['#views_display_id']) . '__' . str_replace('-', '_', $variables['element']['#form_element_type']);
+  if (isset($element['#views_display_id']) && isset($element['#form_id'])) {
+    $suggestions[] = 'form_element_label__views_exposed_form__' . str_replace('-', '_', $element['#views_display_id']) . '__' . str_replace('-', '_', $element['#form_element_type']);
   }
 
 }
@@ -107,18 +149,20 @@ function lark_theme_suggestions_form_element_label_alter(array &$suggestions, ar
  * Implements hook_preprocess_form_element().
  */
 function lark_preprocess_form_element(array &$variables) {
+  $element = $variables['element'];
+
   if (!isset($variables['label'])) {
     return;
   }
 
-  if (isset($variables['element']['#form_id'])) {
-    $variables['label']['#form_id'] = str_replace('-', '_', $variables['element']['#form_id']);
+  if (isset($element['#form_id'])) {
+    $variables['label']['#form_id'] = str_replace('-', '_', $element['#form_id']);
   }
-  if (isset($variables['element']['#type'])) {
-    $variables['label']['#form_element_type'] = str_replace('-', '_', $variables['element']['#type']);
+  if (isset($element['#type'])) {
+    $variables['label']['#form_element_type'] = str_replace('-', '_', $element['#type']);
   }
-  if (isset($variables['element']['#views_display_id'])) {
-    $variables['label']['#views_display_id'] = str_replace('-', '_', $variables['element']['#views_display_id']);
+  if (isset($element['#views_display_id'])) {
+    $variables['label']['#views_display_id'] = str_replace('-', '_', $element['#views_display_id']);
   }
 }
 
@@ -130,7 +174,6 @@ function lark_preprocess_form_element(array &$variables) {
  * @param $form_id
  *   The form id attached to form elements.
  *
- * @return array
  */
 function lark_forms_attach_form_id(&$form, $form_id) {
   foreach (Element::children($form) as $child) {

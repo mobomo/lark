@@ -11,16 +11,17 @@
   padding: $spacing-large;
 }
 
+%exposed-form__container--no-label,
+.exposed-form__container--no-label {
+  margin-top: 22px;
+}
+
 %exposed-form__item,
 .exposed-form__item {
   flex: auto;
 }
 
-// Extensions
-.views-exposed-form {
-
-  .form-item {
-    @extend %exposed-form__item;
-  }
-
+%exposed-form__select,
+.exposed-form__select {
+  width: 100%;
 }
