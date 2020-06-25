@@ -18,7 +18,15 @@ function styleLint() {
     .src('scss/**/*.s+(a|c)ss')
     .pipe(sassLint(configFile))
     .pipe(sassLint.format())
-    // .pipe(sassLint.failOnError())
+    .pipe(sassLint.failOnError())
+}
+
+function styleLintNoErrors() {
+  const configFile = jsYaml.safeLoad(fs.readFileSync('.sass-lint.yml', 'utf-8'));
+  return gulp
+    .src('scss/**/*.s+(a|c)ss')
+    .pipe(sassLint(configFile))
+    .pipe(sassLint.format())
 }
 
 function css() {
@@ -38,7 +46,7 @@ function watchFiles() {
 
 const lint = gulp.series(styleLint);
 const build = gulp.series(gulp.parallel(styleLint, css));
-const watch = gulp.series(gulp.parallel(styleLint, watchFiles));
+const watch = gulp.series(gulp.parallel(styleLintNoErrors, watchFiles));
 
 exports.lint = lint;
 exports.watch = watch;
