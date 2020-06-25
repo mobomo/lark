@@ -46,7 +46,7 @@ function watchFiles() {
 
 const lint = gulp.series(styleLint);
 const build = gulp.series(gulp.parallel(styleLint, css));
-const watch = gulp.series(gulp.parallel(styleLintNoErrors(), watchFiles));
+const watch = gulp.series(gulp.parallel(styleLintNoErrors, watchFiles));
 
 exports.lint = lint;
 exports.watch = watch;

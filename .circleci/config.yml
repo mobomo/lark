@@ -15,9 +15,7 @@ jobs:
           command: npm install
       - run:
           name: Compile theme
-          command: |
-            set -e
-            npm run build
+          command: npm run build
       - save_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
