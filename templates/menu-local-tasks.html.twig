@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Seven theme implementation to display primary and secondary local tasks.
+ *
+ * Available variables:
+ * - primary: HTML list items representing primary tasks.
+ * - secondary: HTML list items representing primary tasks.
+ *
+ * Each item in these variables (primary and secondary) can be individually
+ * themed in menu-local-task.html.twig.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if primary %}
+  {% set items = [] %}
+  {% for item in primary %}
+    {% set items = items|merge([{
+      'href': item['#link'].url,
+      'label': item['#link'].title,
+      'active': item['#active'],
+      'hide': item['#access'].isAllowed ? true : false
+    }]) %}
+    {% set access = item['#access'] %}
+  {% endfor %}
+
+  {% set data = {
+    'type': 'primary',
+    'items': items
+  }%}
+
+  <nav class="drupal-tabs drupal-tabs--primary" role="navigation">
+    <ul class="drupal-tabs__items">
+      {% for item in data.items %}
+        {% if item.hide %}
+          <li class="drupal-tabs__item">
+            <a href="{{ item.href }}" class="drupal-tabs__link{{ item.active ? ' drupal-tabs__link--active' }}">{{ item.label }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+
+{% endif %}
+{% if secondary %}
+
+  <span id="secondary-tabs-title" class="visually-hidden">{% trans %}Secondary tabs{% endtrans %}</span>
+  <nav role="navigation" class="is-horizontal" aria-labelledby="secondary-tabs-title" data-drupal-nav-tabs>
+    <ul class="drupal-tabs drupal-tabs--secondary clearfix">{{ secondary }}</ul>
+  </nav>
+
+{% endif %}
