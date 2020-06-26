@@ -1,6 +1,9 @@
 @import './core/functions';
 @import './core/mixins';
 @import './core/variables';
+@import './node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@import './node_modules/@fortawesome/fontawesome-free/scss/regular';
+@import './node_modules/@fortawesome/fontawesome-free/scss/solid';
 
 @import './root/typography';
 @import './root/layout';
@@ -10,3 +13,5 @@
 @import './components/button';
 @import './components/drupal-tabs';
 @import './components/exposed-form';
+@import './components/sidebar-menu';
+@import './components/site-banner';
