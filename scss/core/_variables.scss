@@ -24,18 +24,24 @@ $spacing-medium: 12px;
 $spacing-small: 6px;
 
 // fonts
-$base-include-path: '../fonts/' !default;
+$base-include-path: '..' !default;
 $include-base-fonts: true !default;
 $base-sans-serif: Arial, Verdana, sans-serif !default;
+$fa-font-path: $base-include-path + '/node_modules/@fortawesome/fontawesome-free/webfonts' !default;
 
 $fonts: (
   'sans': ('Oxygen', #{$base-sans-serif}),
+  'icon': ('Font Awesome 5 Free'),
 ) !default;
 
 $font-weights: (
   'sans': (
     reg: 400,
     bold: 700,
+  ),
+  'icon': (
+    reg: 300,
+    solid: 600,
   )
 ) !default;
 

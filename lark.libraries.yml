@@ -5,4 +5,4 @@ global-styling:
       '//fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap:': { type: external, minified: true }
       css/main.css: {}
   js:
-    js/example.js: {}
+    js/sidebar-menu.js: {}

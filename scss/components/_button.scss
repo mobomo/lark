@@ -30,6 +30,12 @@
 
 }
 
+.button--sidebar {
+  display: block;
+  margin-bottom: $spacing-medium;
+  width: 100%;
+}
+
 // Drupal extensions.
 // We'll use these until we update the templates to use better classes.
 .button {
