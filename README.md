@@ -2,7 +2,7 @@
 
 A Drupal administration theme.
 
-[![Mobomo](https://circleci.com/gh/mobomo/lark.svg?style=shield)]()
+[![Mobomo](https://circleci.com/gh/mobomo/lark.svg?style=shield)](https://app.circleci.com/pipelines/github/mobomo/lark)
 
 
 ## Contributing
