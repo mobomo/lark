@@ -6,45 +6,47 @@
   </div>
   <div class="grid--full">
     <div class="col l-sidebar">
-      <div>
-        <a class="button button--sidebar" href="/admin/content-type"><div class="fas fa-plus"></div> Add Content</a>
+      <div class="l-sidebar__container">
+        <div>
+          <a class="button button--sidebar" href="/admin/content-type"><div class="fas fa-plus"></div> Add Content</a>
+        </div>
+        <nav class="sidebar-menu">
+          <div class="h6 sidebar-menu__title">Menu</div>
+          <ul class="sidebar-menu__parent-list">
+            <li class="sidebar-menu__item">
+              <a class="sidebar-menu__item-link" href="/admin/content" title="Content">Content</a>
+            </li>
+            <li class="sidebar-menu__item">
+              <a class="sidebar-menu__item-link" href="/admin/people" title="People">People</a>
+            </li>
+            <li class="sidebar-menu__item">
+              <a class="sidebar-menu__item-link" href="/admin/structure" title="Structure">Structure</a>
+            </li>
+            <li class="sidebar-menu__item">
+              <a class="sidebar-menu__item-link" href="/admin/help" title="Help">Help</a>
+            </li>
+            <li class="sidebar-menu__item">
+              <div class="sidebar-menu__moreless">More</div>
+              <ul class="sidebar-menu__sub-list">
+                <li class="sidebar-menu__item">
+                  <a class="sidebar-menu__item-link" href="/admin/reports" title="Reports">Reports</a>
+                </li>
+                <li class="sidebar-menu__item">
+                  <a class="sidebar-menu__item-link" href="/admin/config" title="Configuration">Configuration</a>
+                </li>
+                <li class="sidebar-menu__item">
+                  <a class="sidebar-menu__item-link" href="/admin/extend" title="Extend">Extend</a>
+                </li>
+                <li class="sidebar-menu__item">
+                  <a class="sidebar-menu__item-link" href="/admin/appearance" title="Appearance">Appearance</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <hr class="hr margin-lg--left" />
+        {{ page.sidebar }}
       </div>
-      <nav class="sidebar-menu">
-        <div class="h6 sidebar-menu__title">Menu</div>
-        <ul class="sidebar-menu__parent-list">
-          <li class="sidebar-menu__item">
-            <a class="sidebar-menu__item-link" href="/admin/content" title="Content">Content</a>
-          </li>
-          <li class="sidebar-menu__item">
-            <a class="sidebar-menu__item-link" href="/admin/people" title="People">People</a>
-          </li>
-          <li class="sidebar-menu__item">
-            <a class="sidebar-menu__item-link" href="/admin/structure" title="Structure">Structure</a>
-          </li>
-          <li class="sidebar-menu__item">
-            <a class="sidebar-menu__item-link" href="/admin/help" title="Help">Help</a>
-          </li>
-          <li class="sidebar-menu__item">
-            <div class="sidebar-menu__moreless">More</div>
-            <ul class="sidebar-menu__sub-list">
-              <li class="sidebar-menu__item">
-                <a class="sidebar-menu__item-link" href="/admin/reports" title="Reports">Reports</a>
-              </li>
-              <li class="sidebar-menu__item">
-                <a class="sidebar-menu__item-link" href="/admin/config" title="Configuration">Configuration</a>
-              </li>
-              <li class="sidebar-menu__item">
-                <a class="sidebar-menu__item-link" href="/admin/extend" title="Extend">Extend</a>
-              </li>
-              <li class="sidebar-menu__item">
-                <a class="sidebar-menu__item-link" href="/admin/appearance" title="Appearance">Appearance</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <hr class="hr margin-lg--left" />
-      {{ page.sidebar }}
     </div>
     <div class="col l-content">
       {{ page.header }}

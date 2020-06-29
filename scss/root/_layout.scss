@@ -5,8 +5,34 @@
 }
 
 .l-sidebar {
-  position: relative;
   width: 300px;
+}
+
+.l-sidebar__container {
+  position: sticky;
+  top: 82px;
+
+  .toolbar-horizontal & {
+    top: calc(39px + 82px + 2em);
+
+    @at-root .toolbar-horizontal {
+
+      &.toolbar-tray-open {
+
+        .l-sidebar__container {
+          top: calc(79px + 82px + 2em);
+        }
+
+      }
+
+    }
+
+  }
+
+  .toolbar-vertical & {
+    top: calc(39px + 82px + 2em);
+  }
+
 }
 
 .l-content {
@@ -16,7 +42,30 @@
 .l-banner {
   position: sticky;
   top: 0;
+  z-index: 900;
   background-color: $white;
+
+  .toolbar-horizontal & {
+    top: 39px;
+
+    @at-root .toolbar-horizontal {
+
+      &.toolbar-tray-open {
+
+        .l-banner {
+          top: 79px;
+        }
+
+      }
+
+    }
+
+  }
+
+  .toolbar-vertical & {
+    top: 39px;
+  }
+
 }
 
 // grid

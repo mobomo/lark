@@ -1,7 +1,14 @@
 .site-banner {
   display: flex;
-  flex-direction: row;
+  position: relative;
+  z-index: 900;
   border-bottom: 1px solid $light-gray;
+  background-color: $white;
   padding: $spacing-medium 2em;
-  height: 50px;
+  height: 82px;
+}
+
+.site-banner__container {
+  display: flex;
+  flex-direction: row;
 }
