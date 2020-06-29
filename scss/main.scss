@@ -5,11 +5,14 @@
 @import './node_modules/@fortawesome/fontawesome-free/scss/regular';
 @import './node_modules/@fortawesome/fontawesome-free/scss/solid';
 
+@import './root/root';
 @import './root/typography';
 @import './root/layout';
+@import './root/utility';
 @import './root/tables';
 @import './root/forms';
 
+@import './components/breadcrumbs';
 @import './components/button';
 @import './components/drupal-tabs';
 @import './components/exposed-form';

@@ -1,0 +1,10 @@
+hr,
+.hr {
+  display: block;
+  margin-top: $spacing-medium;
+  margin-bottom: $spacing-medium;
+  outline: none;
+  border: 0;
+  background-color: $light-gray;
+  height: 1px;
+}
