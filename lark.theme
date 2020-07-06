@@ -55,12 +55,18 @@ function lark_theme_suggestions_form_alter(array &$suggestions, array $variables
  */
 function lark_theme_suggestions_container_alter(array &$suggestions, array $variables) {
   $element = $variables['element'];
+
   if (isset($element['#type']) && $element['#type'] != 'container') {
     $suggestions[] = 'container__' . str_replace('-', '_', $element['#type']);
     if (isset($element['#attributes']['data-twig-suggestion'])) {
       $suggestions[] = 'container__' . str_replace('-', '_', $element['#type']) . '__' . str_replace('-', '_', $element['#attributes']['data-twig-suggestion']);
     }
   }
+
+  if(isset($element['#id'])) {
+    $suggestions[] = 'container__' . str_replace('-', '_', $element['#id']);
+  }
+
   if (isset($element['#type']) && $element['#type'] == 'container' && isset($element['children']['#type'])) {
     $suggestions[] = 'container__' . str_replace('-', '_', $element['children']['#type']);
   }

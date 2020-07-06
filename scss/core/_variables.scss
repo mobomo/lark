@@ -18,6 +18,18 @@ $background-secondary: $light-gray;
 $borders: $medium-gray;
 $error: $red;
 
+// status messages
+$message-error-border: $red;
+$message-error-bg: $red;
+$message-error-color: $white;
+$message-status-border: #28a745;
+$message-status-bg: #b7f0d4;
+$message-status-color: #004627;
+$message-warning-border: #ffc107;
+$message-warning-bg: #fff3cd;
+$message-warning-color: #674e03;
+
+
 // margins
 $spacing-large: 16px;
 $spacing-medium: 12px;
