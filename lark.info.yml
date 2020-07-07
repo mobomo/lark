@@ -2,6 +2,7 @@ name: Lark
 type: theme
 description: 'An Administrative theme from Mobomo.'
 core: 8.x
+core_version_requirement: ^8 || ^9
 base_theme: none
 libraries:
   - lark/global-styling
