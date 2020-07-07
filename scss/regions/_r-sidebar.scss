@@ -1,0 +1,19 @@
+.r-sidebar {
+  @include font(sans, reg);
+
+  ul,
+  ol {
+    margin-bottom: $spacing-large;
+  }
+
+  a {
+    padding: 12px 4px;
+    color: $text;
+
+    &:hover {
+      color: $primary;
+    }
+
+  }
+
+}

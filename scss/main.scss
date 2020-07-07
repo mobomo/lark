@@ -12,6 +12,10 @@
 @import './root/tables';
 @import './root/forms';
 
+@import './regions/r-sidebar';
+
+@import './components/action-links';
+@import './components/banner-search';
 @import './components/breadcrumbs';
 @import './components/bulk-actions';
 @import './components/button';
@@ -21,3 +25,4 @@
 @import './components/sidebar-menu';
 @import './components/site-banner';
 @import './components/site-branding';
+@import './components/vertical-tabs';

@@ -1,11 +1,12 @@
 .site-branding {
   align-items: center;
-  width: 300px;
+  max-width: 300px;
 }
 
 .site-branding__home-link {
 
   img {
+    max-width: 163px;
     height: 100%;
   }
 

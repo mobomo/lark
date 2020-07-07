@@ -32,7 +32,7 @@
 
   &--active {
     @include font(sans, bold);
-    background-color: rgba($primary, 0.12)Wor;
+    background-color: rgba($primary, 0.12);
     color: $primary;
   }
 
@@ -80,7 +80,7 @@
     }
   }
 
-  &[href^='/admin/extend'] {
+  &[href^='/admin/modules'] {
     &:before {
       @include font(icon, solid);
       content: '\f1e6';

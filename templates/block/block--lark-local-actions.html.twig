@@ -1,0 +1,15 @@
+{% extends "@block/block.html.twig" %}
+
+{#
+/**
+ * @file
+ * Theme override for local actions (primary actions.)
+ */
+#}
+{% block content %}
+  {% if content %}
+    <ul class="action-links">
+      {{ content }}
+    </ul>
+  {% endif %}
+{% endblock %}

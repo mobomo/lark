@@ -28,13 +28,11 @@
  */
 #}
 {% set classes = [
-  'site-branding',
-  'col-2'
+  'banner-search',
+  'col-8'
 ] %}
 <div{{ attributes.addClass(classes) }}>
-  <a class="site-branding__home-link" href="/" title="Home">
-    {% block content %}
-      {{ content }}
-    {% endblock %}
-  </a>
+  {% block content %}
+    {{ content }}
+  {% endblock %}
 </div>
