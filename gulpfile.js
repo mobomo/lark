@@ -33,9 +33,9 @@ function css() {
   return gulp
     .src('./scss/main.scss')
     .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+    .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(gulp.dest('./css/'))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(gulp.dest('./css/'))
 }
 

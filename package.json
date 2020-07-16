@@ -17,6 +17,9 @@
     "gulp-sass-lint": "^1.4.0",
     "js-yaml": "^3.14.0"
   },
+  "browserslist": [
+    "last 3 version"
+  ],
   "scripts": {
     "lint": "gulp lint",
     "build": "gulp",
