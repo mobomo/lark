@@ -135,5 +135,8 @@ input {
 
 select {
   @extend %input--select;
+  background: url('/themes/custom/lark/images/icon-arrow-down.svg') $white 98% 11px no-repeat;
+  background-size: 14px;
+  appearance: none;
 }
 
