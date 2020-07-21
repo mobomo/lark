@@ -3,3 +3,13 @@
     font-size: 13px;
   }
 }
+
+.toolbar-menu-administration {
+  .toolbar-menu {
+    > .hover-intent {
+      > .toolbar-menu {
+        z-index: 1000;
+      }
+    }
+  }
+}
