@@ -39,7 +39,6 @@ $spacing-small: 6px;
 $base-include-path: '..' !default;
 $include-base-fonts: true !default;
 $base-sans-serif: Arial, Verdana, sans-serif !default;
-$fa-font-path: $base-include-path + '/node_modules/@fortawesome/fontawesome-free/webfonts' !default;
 
 $fonts: (
   'sans': ('Oxygen', #{$base-sans-serif}),
@@ -57,3 +56,4 @@ $font-weights: (
   )
 ) !default;
 
+$fa-font-path: $base-include-path + '/fonts' !default;
