@@ -1,0 +1,11 @@
+// Override system styling from:
+// core/modules/system/css/components/tabledrag.module.css
+.draggable {
+  .tabledrag-handle {
+    .handle {
+      margin: -0.2em 0.5em 0;
+      background-position: center center;
+      height: 100%;
+    }
+  }
+}
