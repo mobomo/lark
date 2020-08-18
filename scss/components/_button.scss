@@ -1,6 +1,7 @@
 %button,
 .button {
   @include font(sans, bold);
+  display: inline-block;
   border: 0;
   box-shadow: none;
   background-color: $primary;
