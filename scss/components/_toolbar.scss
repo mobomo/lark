@@ -13,3 +13,10 @@
     }
   }
 }
+
+// Give dialog/modal higher z-index so doesn't hide below site banner
+.toolbar-tray-open {
+  .ui-dialog {
+    z-index: 502;
+  }
+}
