@@ -5,7 +5,12 @@
 }
 
 .l-sidebar {
-  width: 300px;
+  display: none;
+
+  &.active {
+    display: block;
+    width: 300px;
+  }
 }
 
 .l-sidebar__container {

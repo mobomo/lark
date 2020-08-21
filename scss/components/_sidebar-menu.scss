@@ -1,3 +1,31 @@
+.sidebar-container {
+  .toolbar-sidebar-toggle {
+    display: block;
+    margin: 0 auto;
+    border: 0;
+    background-attachment: scroll;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+
+    &.open {
+      background-image: url('../images/push-left.svg');
+    }
+
+    &.closed {
+      background-image: url('../images/push-right.svg');
+    }
+
+    .toolbar-sidebar-toggle-text {
+      display: none;
+    }
+  }
+}
+
 .sidebar-menu__title {
   @include font(sans, bold);
   margin-bottom: $spacing-medium;

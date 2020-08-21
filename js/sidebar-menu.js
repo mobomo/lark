@@ -34,4 +34,16 @@
     }
   }
 
+  Drupal.behaviors.sidebarCollapse = {
+    attach: function (context, settings) {
+      const sidebar = document.getElementsByClassName('l-sidebar')[0];
+      const sidebarToggleButton = document.getElementsByClassName('toolbar-sidebar-toggle')[0];
+
+      sidebarToggleButton.onclick = function() {
+        sidebar.classList.contains('active') ? sidebar.classList.remove('active') : sidebar.classList.add('active');
+        sidebarToggleButton.classList.contains('open') ? (sidebarToggleButton.classList.remove('open'), sidebarToggleButton.classList.add('closed')) : (sidebarToggleButton.classList.remove('closed'), çsidebarToggleButton.classList.add('open'));
+      }
+    }
+  }
+
 })(jQuery);
