@@ -41,7 +41,7 @@
 
       sidebarToggleButton.onclick = function() {
         sidebar.classList.contains('active') ? sidebar.classList.remove('active') : sidebar.classList.add('active');
-        sidebarToggleButton.classList.contains('open') ? (sidebarToggleButton.classList.remove('open'), sidebarToggleButton.classList.add('closed')) : (sidebarToggleButton.classList.remove('closed'), çsidebarToggleButton.classList.add('open'));
+        sidebarToggleButton.classList.contains('open') ? (sidebarToggleButton.classList.remove('open'), sidebarToggleButton.classList.add('closed')) : (sidebarToggleButton.classList.remove('closed'), sidebarToggleButton.classList.add('open'));
       }
     }
   }
