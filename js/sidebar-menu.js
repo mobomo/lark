@@ -26,10 +26,12 @@
       const moreLess = document.getElementsByClassName('sidebar-menu__moreless')[0];
       const subList = document.getElementsByClassName('sidebar-menu__sub-list')[0];
 
-      moreLess.onclick = function() {
-        subList.classList.contains('sidebar-menu__sub-list--open') ? subList.classList.remove('sidebar-menu__sub-list--open') : subList.classList.add('sidebar-menu__sub-list--open');
-        moreLess.classList.contains('sidebar-menu__moreless--active') ? moreLess.classList.remove('sidebar-menu__moreless--active') : moreLess.classList.add('sidebar-menu__moreless--active');
-        // subList.classList.add('sidebar-menu__sub-list--open');
+      if (moreLess && subList) {
+        moreLess.onclick = function () {
+          subList.classList.contains('sidebar-menu__sub-list--open') ? subList.classList.remove('sidebar-menu__sub-list--open') : subList.classList.add('sidebar-menu__sub-list--open');
+          moreLess.classList.contains('sidebar-menu__moreless--active') ? moreLess.classList.remove('sidebar-menu__moreless--active') : moreLess.classList.add('sidebar-menu__moreless--active');
+          // subList.classList.add('sidebar-menu__sub-list--open');
+        }
       }
     }
   }
