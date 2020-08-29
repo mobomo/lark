@@ -4,6 +4,7 @@
 
   .views-row {
     margin-right: 1.333%;
+    margin-bottom: 1rem;
     width: 32%;
   }
 
@@ -36,6 +37,18 @@
   .form-actions {
     clear: both;
     padding: 0.5rem;
+  }
+
+  .pager {
+    ul {
+      margin: 0 auto;
+      width: 50%;
+
+      li {
+        display: inline-block;
+
+      }
+    }
   }
 }
 
