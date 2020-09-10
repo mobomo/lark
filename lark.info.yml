@@ -5,10 +5,10 @@ core: 8.x
 core_version_requirement: ^8 || ^9
 base theme: false
 dependencies:
-  search
+  - search
 libraries:
   - lark/global-styling
-  - drupal/jquery
+  - core/jquery
   - core/normalize
 regions:
   banner: Banner
