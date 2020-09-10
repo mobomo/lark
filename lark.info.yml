@@ -8,7 +8,7 @@ dependencies:
   - search
 libraries:
   - lark/global-styling
-  - drupal/jquery
+  - core/jquery
   - core/normalize
 regions:
   banner: Banner
