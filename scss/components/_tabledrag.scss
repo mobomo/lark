@@ -2,6 +2,8 @@
 // core/modules/system/css/components/tabledrag.module.css
 .draggable {
   .tabledrag-handle {
+    margin-left: 0 !important;
+
     .handle {
       margin: -0.2em 0.5em 0;
       background-position: center center;
