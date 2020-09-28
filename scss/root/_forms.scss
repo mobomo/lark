@@ -142,8 +142,15 @@ select {
   appearance: none;
 }
 
-form > .form-wrapper {
-  border-top: 1px solid $light-gray;
-  padding: 10px 0;
+.node-form {
+  > .form-wrapper {
+    padding: 10px 0;
+  }
+
+  .form-actions {
+    .button {
+      margin-right: 10px;
+    }
+  }
 }
 
