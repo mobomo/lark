@@ -1,3 +1,5 @@
+@import '../core/variables';
+
 label,
 .label,
 .fieldset-legend {
@@ -138,5 +140,17 @@ select {
   background: url('/themes/custom/lark/images/icon-arrow-down.svg') $white 98% 11px no-repeat;
   background-size: 14px;
   appearance: none;
+}
+
+.node-form {
+  > .form-wrapper {
+    padding: 10px 0;
+  }
+
+  .form-actions {
+    .button {
+      margin-right: 10px;
+    }
+  }
 }
 
