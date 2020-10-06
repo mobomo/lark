@@ -146,10 +146,8 @@ select {
   padding: 1.5em 0;
 }
 
-.node-form {
-  > .form-wrapper {
-    padding: 10px 0;
-  }
+.node-form,
+.node-confirm-form {
 
   .form-actions {
     .button {
