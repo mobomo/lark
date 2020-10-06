@@ -1,6 +1,11 @@
 <?php
 use Drupal\Core\Form\FormStateInterface;
 
+function lark_preprocess_page(&$variables) {
+  $shortcuts = shortcut_renderable_links();
+  $variables['shortcuts'] = $shortcuts;
+}
+
 /**
  * Implements hook_form_system_theme_settings_alter().
  */
