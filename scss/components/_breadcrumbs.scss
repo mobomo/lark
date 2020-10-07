@@ -13,25 +13,16 @@
 
 .breadcrumbs__item {
 
-  &:first-child {
-
-    &:before {
-      content: '';
-    }
-
-  }
-
-  &:before {
-    content: ' ';
-  }
-
   &:after {
-    content: ' /';
+    margin-right: $spacing-small;
+    margin-left: $spacing-small;
+    content: '/';
   }
 
   &:last-child {
 
     &:after {
+      margin: 0;
       content: '';
     }
 
