@@ -9,7 +9,6 @@
 
       for (let i=0; i < sidebarLinks.length; i++) {
         const href = sidebarLinks[i].getAttribute('href');
-        console.log(href);
         if (href === path) {
           sidebarLinks[i].classList.add('sidebar-menu__item-link--active');
         }
