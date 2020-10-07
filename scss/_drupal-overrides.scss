@@ -1,0 +1,23 @@
+// This file is for putting things that can't otherwise be changed in Drupal.
+// If you add something here, document the reasoning so we can do it the right
+// way when the option is available.
+
+
+
+// @TODO: Remove these important declarations.
+// The sticky header's position from the top of the page comes from
+// core/tableheader.js
+// We can override this using libraries-override, but there appear to be some
+// dependencies I can't figure out with the displace library. So, for now, we'll
+// just style it out.
+.sticky-header {
+
+  .toolbar-vertical & {
+    top: 121px !important;
+  }
+
+  .toolbar-horizontal & {
+    top: 161px !important;
+  }
+
+}
