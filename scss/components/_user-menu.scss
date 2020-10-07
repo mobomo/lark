@@ -1,0 +1,82 @@
+.user-menu {
+  text-align: right;
+}
+
+.user-menu__toggle {
+  position: relative;
+  z-index: 901;
+  background-color: $white;
+  color: $primary;
+
+  &:hover,
+  &:focus {
+    border: 0;
+  }
+
+  &:focus {
+    background-color: $white;
+  }
+
+  &:hover {
+    background-color: rgba($primary, 0.15);
+    background-image: none;
+  }
+
+  &:before {
+    @include font(icon);
+    margin-right: $spacing-large;
+    color: $primary;
+    content: '\f007';
+  }
+
+  &:after {
+    @include font(icon, solid);
+    margin-left: $spacing-large;
+    color: $primary;
+    content: '\f107';
+  }
+
+}
+
+.user-menu__toggle--active {
+  box-shadow: 0 4px 0 0 #ffffff, 0 1px 3px 0 rgba(114, 119, 128, 0.5);
+  background-color: $white;
+}
+
+.user-menu__links {
+  display: none;
+}
+
+.user-menu__links-list {
+  position: absolute;
+  right: 0;
+  z-index: 900;
+  margin: 0;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  box-shadow: 0 1px 4px 0 rgba(114, 119, 128, 0.5);
+  background-color: $white;
+  padding: 0;
+  min-width: 200px;
+  list-style: none;
+  text-align: left;
+}
+
+.user-menu__item-link {
+  display: block;
+  padding: $spacing-large;
+  color: $medium-gray;
+
+  &:hover,
+  &:focus {
+    background-color: rgba($light-gray, 0.15);
+  }
+
+}
+
+// JavaScript only. No styling.
+.js-user-menu__visible {
+  display: block;
+  position: relative;
+}
+

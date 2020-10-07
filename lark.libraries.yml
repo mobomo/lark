@@ -6,3 +6,4 @@ global-styling:
       css/main.css: {}
   js:
     js/sidebar-menu.js: {}
+    js/user-menu.js: {}
