@@ -147,6 +147,12 @@ input {
       }
     }
   }
+
+  &[type='date'],
+  &[type='time'] {
+    margin-bottom: $spacing-small;
+    padding: $spacing-small;
+  }
 }
 
 select {
