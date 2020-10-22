@@ -10,6 +10,20 @@
     border: 1px solid $message-error-border;
     background-color: $message-error-bg;
     color: $message-error-color;
+
+    li,
+    p {
+      color: $message-error-color;
+    }
+
+    a {
+      text-decoration: underline;
+
+      &:link,
+      &:visited {
+        color: $message-error-color;
+      } 
+    }
   }
 
   &--status {

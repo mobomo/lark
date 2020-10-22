@@ -25,6 +25,14 @@ label,
 
 }
 
+// Help vertical spacing look even.
+// As seen on /admin/modules
+td {
+  label {
+    margin-bottom: 0;
+  }
+}
+
 %input,
 .input {
   display: block;
@@ -78,7 +86,13 @@ textarea,
 
 input {
 
-  &[type='text'] {
+  &[type='text'],
+  &[type='date'],
+  &[type='email'],
+  &[type='number'],
+  &[type='search'],
+  &[type='tel'],
+  &[type='url'] {
     @extend %input--text;
   }
 
