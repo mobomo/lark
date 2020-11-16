@@ -21,3 +21,13 @@
   }
 
 }
+
+// Ckeditor toolbar configuration buttons box sizing to the content instead of border.
+.ckeditor-toolbar-configuration {
+
+  .ckeditor-button {
+    a {
+      box-sizing: content-box;
+    }
+  }
+}
