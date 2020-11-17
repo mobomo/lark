@@ -125,6 +125,16 @@ function lark_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   }
 
   $form['actions']['submit']['#attributes']['data-twig-suggestion'] = $form['#id'];
+
+  // Valid admin path for nodes and media content.
+  $isAdminContentPath = substr($form['#action'], 0, 14)  == '/admin/content' ? True : False;
+
+  // Change Operations for Action in admin content form.
+  if ($isAdminContentPath and isset($form['output'][0]['#view']->field['operations'])) {
+    if ($form['output'][0]['#view']->field['operations']->options['label'] == 'Operations'){
+      $form['output'][0]['#view']->field['operations']->options['label'] = 'Action';
+    }
+  }
 }
 
 /**
