@@ -21,13 +21,13 @@
 }
 
 .drupal-tabs__item,
-.drupal-tabs--secondary > li {
+.drupal-tabs__item--secondary {
   background-color: transparent;
   min-width: 150px;
 }
 
 .drupal-tabs__link,
-.drupal-tabs--secondary > li > a {
+.drupal-tabs__item-link--secondary {
   @include font(sans, bold);
   display: inline-block;
   padding: 16px;
@@ -44,10 +44,19 @@
     text-decoration: none;
   }
 
+  .is-active {
+    box-shadow: inset 0 -4px 0 0 $primary;
+    font-weight: 700;
+
+    &:hover {
+      background-color: $white;
+    }
+
+  }
+
 }
 
-.drupal-tabs__link--active,
-.drupal-tabs--secondary > li > .is-active {
+.drupal-tabs__link--active {
   box-shadow: inset 0 -4px 0 0 $primary;
   font-weight: 700;
 
