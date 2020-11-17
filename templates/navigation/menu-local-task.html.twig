@@ -16,5 +16,12 @@
  * @ingroup themeable
  */
 #}
-{% set link = link|merge({ '#attributes': { 'class': [ 'drupal-tabs__item-link--secondary' ] } }) %}
+{% set link =
+    link|merge({
+      '#attributes': {
+        'class': [ 'drupal-tabs__item-link--secondary' ]
+      }
+    })
+%}
+
 <li{{ attributes.addClass('drupal-tabs__item--secondary') }}>{{ link }}</li>
