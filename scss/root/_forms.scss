@@ -157,13 +157,15 @@ input {
 
 select {
   @extend %input--select;
-  background: url('/themes/contrib/lark/images/icon-arrow-down.svg') $white 98% 11px no-repeat;
+  background: url('/themes/contrib/lark/images/icon-arrow-down.svg') $white 96% 11px no-repeat;
   background-size: 14px;
+  min-width: 160px;
   appearance: none;
 }
 
 .form-actions {
   padding: 1.5em 0;
+  padding-bottom: 0.5em;
 }
 
 .node-form,
