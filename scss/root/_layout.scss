@@ -68,6 +68,45 @@
 
 }
 
+.js-media-library-view {
+  form {
+    display: flex;
+    flex-wrap: wrap;
+
+    .js-form-wrapper {
+      flex: 0 0 50%;
+      padding-bottom: 1em;
+    }
+
+    .media-library-select-all {
+      flex: 0 0 50%;
+      padding: 3em;
+    }
+
+    .form-actions {
+      flex: 0 0 100%;
+    }
+
+    .js-media-library-item {
+      flex: 0 0 33%;
+      padding: 0.8em 0;
+
+      .views-field-media-bulk-form {
+        display: block;
+        padding-bottom: 0.2em;
+      }
+
+      span {
+        display: block;
+        padding-bottom: 0.2em;
+      }
+
+    }
+
+  }
+  
+}
+
 // grid
 // @TODO: Actually define and utilize the grid system presented in webflow.
 .grid {
