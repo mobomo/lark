@@ -27,7 +27,7 @@ th,
 .th {
   border-color: inherit;
   box-shadow: inset 0 -2px 0 0 $light-gray;
-  padding: $spacing-small $spacing-large;
+  padding: 18px $spacing-large;
   vertical-align: inherit;
   text-align: left;
 
@@ -47,6 +47,7 @@ th,
   }
 
   a {
+    white-space: nowrap;
 
     &[title^='sort'] {
 
