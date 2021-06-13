@@ -1,3 +1,4 @@
+@import './base/elements';
 @import './core/functions';
 @import './core/mixins';
 @import './core/variables';
@@ -24,6 +25,8 @@
 @import './components/bulk-actions';
 @import './components/button';
 @import './components/dropbutton';
+@import './components/details';
+@import './components/dialog';
 @import './components/drupal-tabs';
 @import './components/entity_browser';
 @import './components/exposed-form';
@@ -40,3 +43,5 @@
 @import './components/panels';
 
 @import './drupal-overrides';
+
+@import './theme/media-library';

@@ -15,7 +15,7 @@ sass.compiler = require('node-sass');
 function styleLint() {
   const configFile = jsYaml.safeLoad(fs.readFileSync('.sass-lint.yml', 'utf-8'));
   return gulp
-    .src('scss/**/*.s+(a|c)ss')
+    .src(['scss/**/*.s+(a|c)ss', '!scss/components/_dialog.scss', '!scss/base/elements.scss'])
     .pipe(sassLint(configFile))
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError())
