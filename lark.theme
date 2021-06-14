@@ -40,30 +40,6 @@ function lark_forms_form_alter(&$form, FormStateInterface $form_state, $form_id)
     $display_id = str_replace('-', '_', $display_id);
     lark_forms_attach_views_display_id($form, $display_id);
   }
-
-  $form_object = $form_state->getFormObject();
-  if ($form_object instanceof ViewsForm && strpos($form_object->getBaseFormId(), 'views_form_media_library') === 0) {
-    if (isset($form['header'])) {
-      $form['header']['#attributes']['class'][] = 'media-library-views-form__header';
-      $form['header']['media_bulk_form']['#attributes']['class'][] = 'media-library-views-form__bulk_form';
-    }
-    $form['actions']['submit']['#attributes']['class'] = ['media-library-select'];
-
-    // This conditional exists because the media-library-views-form class is
-    // currently added by Classy, but Seven will eventually not use Classy as a
-    // base theme.
-    // @todo remove conditional, keep class addition in
-    //   https://drupal.org/node/3110137
-    // @see https://www.drupal.org/node/3109287
-    // @see classy_form_alter()
-    if (!isset($form['#attributes']['class']) || !in_array('media-library-views-form', $form['#attributes']['class'])) {
-      $form['#attributes']['class'][] = 'media-library-views-form';
-    }
-  }
-  // Add after build to add a CSS class to the form actions.
-  if ($form_id === 'views_exposed_form' && strpos($form['#id'], 'views-exposed-form-media-library-widget') === 0) {
-    $form['actions']['#attributes']['class'][] = 'media-library-view--form-actions';
-  }
 }
 
 /**
@@ -152,6 +128,30 @@ function lark_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   }
 
   $form['actions']['submit']['#attributes']['data-twig-suggestion'] = $form['#id'];
+
+  $form_object = $form_state->getFormObject();
+  if ($form_object instanceof ViewsForm && strpos($form_object->getBaseFormId(), 'views_form_media_library') === 0) {
+    if (isset($form['header'])) {
+      $form['header']['#attributes']['class'][] = 'media-library-views-form__header';
+      $form['header']['media_bulk_form']['#attributes']['class'][] = 'media-library-views-form__bulk_form';
+    }
+    $form['actions']['submit']['#attributes']['class'] = ['media-library-select'];
+
+    // This conditional exists because the media-library-views-form class is
+    // currently added by Classy, but Seven will eventually not use Classy as a
+    // base theme.
+    // @todo remove conditional, keep class addition in
+    //   https://drupal.org/node/3110137
+    // @see https://www.drupal.org/node/3109287
+    // @see classy_form_alter()
+    if (!isset($form['#attributes']['class']) || !in_array('media-library-views-form', $form['#attributes']['class'])) {
+      $form['#attributes']['class'][] = 'media-library-views-form';
+    }
+  }
+  // Add after build to add a CSS class to the form actions.
+  if ($form_id === 'views_exposed_form' && strpos($form['#id'], 'views-exposed-form-media-library-widget') === 0) {
+    $form['actions']['#attributes']['class'][] = 'media-library-view--form-actions';
+  }
 }
 
 /**

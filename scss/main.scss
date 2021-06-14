@@ -9,16 +9,17 @@
 @import './vendor/fa-regular';
 @import './vendor/fa-solid';
 
-@import './root/root';
-@import './root/typography';
-@import './root/layout';
-@import './root/utility';
-@import './root/tables';
-@import './root/forms';
-@import './root/pagination';
+@import './base/root';
+@import './base/typography';
+@import './base/layout';
+@import './base/utility';
 
 @import './regions/r-sidebar';
 
+@import './components/tables';
+@import './components/inline-form';
+@import './components/forms';
+@import './components/pagination';
 @import './components/action-links';
 @import './components/banner-search';
 @import './components/breadcrumbs';
