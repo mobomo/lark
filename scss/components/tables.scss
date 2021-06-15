@@ -70,7 +70,9 @@ th,
 
 tr,
 .tr {
-  border-bottom: 0.0625rem solid $light-gray;
+  :not(:last-child) {
+    border-bottom: 0.0625rem solid $light-gray;
+  }
 
   &:hover {
     background-color: rgba($primary, 0.15);

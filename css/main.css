@@ -4875,12 +4875,13 @@ th,
       height: 12px;
       content: ''; }
 
-tr,
-.tr {
+tr :not(:last-child),
+.tr :not(:last-child) {
   border-bottom: 0.0625rem solid #d7d7df; }
-  tr:hover,
-  .tr:hover {
-    background-color: rgba(0, 114, 197, 0.15); }
+
+tr:hover,
+.tr:hover {
+  background-color: rgba(0, 114, 197, 0.15); }
 
 td,
 .td {
