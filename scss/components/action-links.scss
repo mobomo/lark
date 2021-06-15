@@ -1,0 +1,12 @@
+@import '../base/variables';
+
+.action-links {
+  display: flex;
+  margin: ($spacing-large * 2) 0;
+  padding: 0;
+
+  li {
+    margin-right: $spacing-small;
+    list-style: none;
+  }
+}

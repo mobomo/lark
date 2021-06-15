@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "An administration theme for Drupal by Mobomo",
   "main": "index.js",
-  "dependencies": {},
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
     "autoprefixer": "^9.8.6",
