@@ -51,7 +51,6 @@ global-styling:
         weight: -10
       css/components/ui-dialog.css:
         weight: -10
-
   js:
     js/sidebar-menu.js: {}
     js/user-menu.js: {}
@@ -98,8 +97,8 @@ indented:
 media_library:
   version: VERSION
   css:
-    layout:
-      css/layout/media-library.css: {  }
+    theme:
+      css/theme/media-library.css: {  }
 messages:
   version: VERSION
   css:

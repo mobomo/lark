@@ -1,6 +1,6 @@
 @import '../base/variables';
 @import '../base/mixins';
-@import '../base/_typography.scss';
+@import '../base/typography';
 
 label,
 .label,
@@ -9,15 +9,6 @@ label,
   @include font(sans, bold);
   display: block;
   margin-bottom: $spacing-small;
-
-  &.form-required {
-
-    &:after {
-      color: $red;
-      content: ' *';
-    }
-
-  }
 
   &.option {
     @extend %base;

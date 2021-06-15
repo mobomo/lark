@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/panels.scss"],"names":[],"mappings":"AAAA;EAEI,SAAS;EACT,mBAAmB;EACnB,4BAA4B,EAAA;;AAJhC;EAQI,oBAAoB,EAAA","file":"panels.css","sourcesContent":[".panel {\n  .panel__title {\n    margin: 0;\n    background: #f3f4f9;\n    padding: 0.66667em 1.33333em;\n  }\n\n  .panel__content {\n    padding: 1em 1.5em 0;\n  }\n\n}\n"]}

@@ -4,26 +4,44 @@
   "description": "An administration theme for Drupal by Mobomo",
   "main": "index.js",
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.14.0",
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^10.2.4",
     "cssnano": "^4.1.10",
-    "eslint": "^7.10.0",
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
-    "gulp-cli": "^2.3.0",
-    "gulp-postcss": "^8.0.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^6.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-load-plugins": "^2.0.3",
+    "gulp-newer": "^1.4.0",
+    "gulp-pipe": "^1.0.4",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
     "gulp-sass-lint": "^1.4.0",
-    "js-yaml": "^3.14.0",
-    "yargs-parser": "^20.2.1"
+    "gulp-shell": "^0.8.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglify-es": "^2.0.0",
+    "kss": "^3.0.0",
+    "michelangelo": "^0.8.0",
+    "node-sass": "^5.0.0",
+    "postcss": "^8.2.6"
   },
   "browserslist": [
     "last 3 version"
   ],
   "scripts": {
-    "lint": "gulp lint",
+    "lint": "gulp scss-lint; gulp js-lint",
     "build": "gulp",
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "lint:fix": "sass-lint-auto-fix",
+    "init": "npm i --legacy-peer-dep; gulp",
+    "styleguide": "gulp styleguide",
+    "imagemin": "gulp imagemin",
+    "scss": "gulp scss"
   },
   "repository": {
     "type": "git",
@@ -37,5 +55,35 @@
   "bugs": {
     "url": "https://github.com/mobomo/lark/issues"
   },
-  "homepage": "https://github.com/mobomo/lark#readme"
+  "homepage": "https://github.com/mobomo/lark#readme",
+  "dependencies": {
+    "styleflux": "^1.2.0"
+  },
+  "paths": {
+    "dist": {
+      "css": "./css/",
+      "js": "./js/",
+      "sg": "./styleguide/",
+      "img": "./images/"
+    },
+    "scss": [
+      "./scss/**/*.scss"
+    ],
+    "css": [
+      "./*.css"
+    ],
+    "js": [
+      "./*.js"
+    ],
+    "templates": [
+      "./templates/**/*.twig",
+      "./styleguide/*.html"
+    ]
+  },
+  "vars": {
+    "cssName": "style.css",
+    "cssMinName": "style.min.css",
+    "jsName": "main.js",
+    "sgName": "index.html"
+  }
 }

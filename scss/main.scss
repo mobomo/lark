@@ -2,16 +2,11 @@
 @import './base/functions';
 @import './base/mixins';
 @import './base/variables';
-// @import './node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
-// @import './node_modules/@fortawesome/fontawesome-free/scss/regular';
-// @import './node_modules/@fortawesome/fontawesome-free/scss/solid';
-@import './vendor/fontawesome';
-@import './vendor/fa-regular';
-@import './vendor/fa-solid';
-
 @import './base/typography';
 @import './base/layout';
 @import './base/utility';
+
+@import './vendor/fontawesome';
 
 @import './regions/r-sidebar';
 
@@ -43,5 +38,3 @@
 @import './components/panels';
 
 @import './drupal-overrides';
-
-@import './theme/media-library';

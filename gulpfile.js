@@ -1,53 +1,123 @@
 'use strict';
 
-const gulp = require('gulp');
-const rename = require('gulp-rename');
-const sass = require('gulp-sass');
-const postcss = require('gulp-postcss');
-const cssnano = require('cssnano');
-const autoprefixer = require('autoprefixer');
-const sassLint = require('gulp-sass-lint');
-const jsYaml = require('js-yaml');
-const fs = require('fs');
+const pkg = require('./package.json');
+const uglify = require("gulp-uglify-es").default;
+const concat = require("gulp-concat");
 
-sass.compiler = require('node-sass');
+const { dest, series, src, task, watch } = require('gulp');
 
-function styleLint() {
-  const configFile = jsYaml.safeLoad(fs.readFileSync('.sass-lint.yml', 'utf-8'));
-  return gulp
-    .src(['scss/**/*.s+(a|c)ss', '!scss/components/_dialog.scss', '!scss/components/_inline-form.scss', '!scss/base/elements.scss'])
-    .pipe(sassLint(configFile))
-    .pipe(sassLint.format())
-    .pipe(sassLint.failOnError())
-}
+// Load all plugins in devDependencies.
+const $ = require('gulp-load-plugins')({
+  pattern: ['*'],
+  scope: ['devDependencies'],
+  rename: {
+    'gulp-postcss': 'postcss',
+    'gulp-sass-glob': 'glob',
+    'gulp-sass-lint': 'sasslint',
+    'gulp-shell': 'shell',
+    postcss: 'postcss-lib',
+  },
+});
+$.sass.compiler = require('node-sass');
 
-function styleLintNoErrors() {
-  const configFile = jsYaml.safeLoad(fs.readFileSync('.sass-lint.yml', 'utf-8'));
-  return gulp
-    .src('scss/**/*.s+(a|c)ss')
-    .pipe(sassLint(configFile))
-    .pipe(sassLint.format())
-}
+// Logs error messages.
+const onError = (err) => {
+  console.log(err);
+};
 
-function css() {
-  return gulp
-    .src(['scss/**/*.s+(a|c)ss'])
-    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
-    .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(gulp.dest('./css/'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('./css/'))
-}
+// Clean CSS and style guide files.
+task('clean', () => {
+  return $.del(['./css/*', './styleguide/*']);
+});
 
-function watchFiles() {
-  gulp.watch('./scss/**/*', styleLint);
-  gulp.watch('./scss/**/*', css);
-}
+// Compile Sass files.
+task('scss', () => {
+  return $.pipe(src(pkg.paths.scss), [
+    $.plumber({ errorHandler: onError }),
+    $.glob(),
+    $.sourcemaps.init({ loadMaps: true }),
+    $.sass({
+      includePaths: pkg.paths.scss,
+    }).on('error', $.sass.logError),
+    $.cached('sass_compile'),
+    $.postcss([$.autoprefixer()]),
+    $.sourcemaps.write('./'),
+    dest(pkg.paths.dist.css),
+  ]);
+});
 
-const lint = gulp.series(styleLint);
-const build = gulp.series(gulp.parallel( css));
-const watch = gulp.series(gulp.parallel(styleLintNoErrors, watchFiles));
+// Lint Sass files.
+task('scss-lint', () => {
+  return $.pipe(src(pkg.paths.scss), [
+    $.plumber({ errorHandler: onError }),
+    $.glob(),
+    $.sasslint({
+      options: {
+        formatter: 'table',
+      },
+    }),
+    $.sasslint.format(),
+  ]);
+});
 
-exports.lint = lint;
-exports.watch = watch;
-exports.default = build;
+// Generate living style guide.
+task('styleguide', $.shell.task(['./node_modules/kss/bin/kss --config ./kss-config.json']));
+
+// Build CSS files.
+task(
+  'css',
+  series('scss', () => {
+    return $.pipe(src(pkg.paths.dist.css + '**/*.css'), [
+      $.plumber({ errorHandler: onError }),
+      $.sourcemaps.init({ loadMaps: true }),
+      $.postcss([$.cssnano({ preset: 'default' })]),
+      $.rename({ suffix: '.min' }),
+      $.sourcemaps.write('./'),
+      dest(pkg.paths.dist.css),
+    ]);
+  })
+);
+
+// Lint JavaScript files.
+task('js-lint', () => {
+  return $.pipe(src(pkg.paths.js), [$.plumber({ errorHandler: onError }), $.eslint(), $.eslint.format('table')]);
+});
+
+// Build JS files.
+task("js", () => {
+  return $.pipe(src(pkg.paths.js), [
+    $.sourcemaps.init({ largeFile: true }),
+    uglify(),
+    $.sourcemaps.write(),
+    dest(pkg.paths.dist.js)
+  ]);
+});
+
+// Minify image assets.
+task('image-min', () => {
+  return $.pipe(src(pkg.paths.dist.img + '**/*.{png,jpg,jpeg,gif,svg}'), [
+    $.imagemin({
+      progressive: true,
+      interlaced: true,
+      optimizationLevel: 7,
+      svgoPlugins: [{ removeViewBox: false }],
+      verbose: true,
+      use: [],
+    }),
+    dest(pkg.paths.dist.img),
+  ]);
+});
+
+// Default build task.
+task('default', series(['clean', 'css']));
+
+// Watch task.
+task(
+  'watch',
+  series(['clean', 'css', 'js-lint'], () => {
+    watch(pkg.paths.scss, series(['css']));
+    watch(pkg.paths.js, series(['js-lint']));
+  })
+);
+// Lint task.
+task('lint', series(['js-lint', 'scss-lint']));

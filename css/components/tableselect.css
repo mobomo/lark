@@ -1,1 +1,16 @@
-tr.selected td{background:#ffc}[dir=rtl] td.checkbox,[dir=rtl] th.checkbox,td.checkbox,th.checkbox{text-align:center}
+tr.selected td {
+  background: #ffffcc; }
+
+td.checkbox {
+  text-align: center; }
+
+th.checkbox {
+  text-align: center; }
+
+[dir='rtl'] td.checkbox {
+  text-align: center; }
+
+[dir='rtl'] th.checkbox {
+  text-align: center; }
+
+/*# sourceMappingURL=tableselect.css.map */

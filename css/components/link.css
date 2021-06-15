@@ -1,1 +1,12 @@
-button.link{margin:0;padding:0;cursor:pointer;border:0;background:rgba(0,0,0,0);font-size:1em}label button.link{font-weight:700}
+button.link {
+  margin: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1em; }
+
+label button.link {
+  font-weight: bold; }
+
+/*# sourceMappingURL=link.css.map */

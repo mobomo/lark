@@ -1,46 +1,57 @@
-/**
- * @file
- * Visual styles for exposed filters.
- */
+.exposed-filters {
+  .filters {
+    float: left;
+    margin-right: 1em;
+  }
 
-.exposed-filters .filters {
-  float: left; /* LTR */
-  margin-right: 1em; /* LTR */
+  .form-item {
+    margin: 0 0 0.1em;
+    padding: 0;
+
+    label {
+      float: left;
+      width: 10em;
+      font-weight: normal;
+    }
+  }
+
+  .form-select {
+    width: 14em;
+  }
+
+  .current-filters {
+    margin-bottom: 1em;
+
+    .placeholder {
+      font-weight: bold;
+      font-style: normal;
+    }
+  }
+
+  .additional-filters {
+    float: left;
+    margin-right: 1em;
+  }
 }
-[dir="rtl"] .exposed-filters .filters {
-  float: right;
-  margin-right: 0;
-  margin-left: 1em;
-}
-.exposed-filters .form-item {
-  margin: 0 0 0.1em 0;
-  padding: 0;
-}
-.exposed-filters .form-item label {
-  float: left; /* LTR */
-  width: 10em;
-  font-weight: normal;
-}
-[dir="rtl"] .exposed-filters .form-item label {
-  float: right;
-}
-.exposed-filters .form-select {
-  width: 14em;
-}
-/* Current filters */
-.exposed-filters .current-filters {
-  margin-bottom: 1em;
-}
-.exposed-filters .current-filters .placeholder {
-  font-weight: bold;
-  font-style: normal;
-}
-.exposed-filters .additional-filters {
-  float: left; /* LTR */
-  margin-right: 1em; /* LTR */
-}
-[dir="rtl"] .exposed-filters .additional-filters {
-  float: right;
-  margin-right: 0;
-  margin-left: 1em;
+
+[dir='rtl'] {
+  .exposed-filters {
+    .filters {
+      float: right;
+      margin-right: 0;
+      margin-left: 1em;
+    }
+
+    .form-item {
+      label {
+        float: right;
+      }
+    }
+
+    .additional-filters {
+      float: right;
+      margin-right: 0;
+      margin-left: 1em;
+    }
+  }
 }

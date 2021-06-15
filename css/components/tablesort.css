@@ -1,1 +1,7 @@
-th.is-active img{display:inline}td.is-active{background-color:#ddd}
+th.is-active img {
+  display: inline; }
+
+td.is-active {
+  background-color: #dddddd; }
+
+/*# sourceMappingURL=tablesort.css.map */

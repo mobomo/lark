@@ -1,0 +1,11 @@
+{
+  "title": "Branding & Component Library",
+  "mask": "*.scss",
+  "placeholder": "[modifier]",
+  "builder": "node_modules/michelangelo/kss_styleguide/custom-template/",
+  "source": "components/",
+  "destination": "styleguide/",
+  "homepage": "kss-homepage.md",
+  "css": ["../css/*.css"],
+  "js": ["../js/*.js"]
+}

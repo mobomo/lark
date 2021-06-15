@@ -1,23 +1,42 @@
-/**
- * @file
- * Visual styles for links.
- */
 
-ul.inline,
-ul.links.inline {
-  display: inline;
-  padding-left: 0; /* LTR */
+ul {
+  &.inline {
+    display: inline;
+    padding-left: 0;
+
+    li {
+      display: inline;
+      padding: 0 0.5em;
+      list-style-type: none;
+    }
+  }
+
+  &.links {
+    &.inline {
+      display: inline;
+      padding-left: 0;
+    }
+
+    a {
+      &.is-active {
+        color: #000000;
+      }
+    }
+  }
 }
-[dir="rtl"] ul.inline,
-[dir="rtl"] ul.links.inline {
-  padding-right: 0;
-  padding-left: 15px;
-}
-ul.inline li {
-  display: inline;
-  padding: 0 0.5em;
-  list-style-type: none;
-}
-ul.links a.is-active {
-  color: #000;
+
+[dir='rtl'] {
+  ul {
+    &.inline {
+      padding-right: 0;
+      padding-left: 15px;
+    }
+
+    &.links {
+      &.inline {
+        padding-right: 0;
+        padding-left: 15px;
+      }
+    }
+  }
 }

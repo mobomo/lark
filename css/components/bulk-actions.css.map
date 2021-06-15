@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/bulk-actions.scss"],"names":[],"mappings":"AAAA;EACE,mBAAmB,EAAA","file":"bulk-actions.css","sourcesContent":[".bulk-actions {\n  margin-bottom: 30px;\n}\n"]}

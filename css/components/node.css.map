@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/node.scss","components/node.css"],"names":[],"mappings":"AAAA;;;ECGE;ADEF;EACE,yBAAyB,EAAA","file":"node.css","sourcesContent":["/**\n * @file\n * Visual styles for nodes.\n */\n\n.node--unpublished {\n  background-color: #fff4f4;\n}\n","/**\n * @file\n * Visual styles for nodes.\n */\n.node--unpublished {\n  background-color: #fff4f4; }\n"]}

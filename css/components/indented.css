@@ -1,1 +1,8 @@
-.indented{margin-left:25px}[dir=rtl] .indented{margin-right:25px;margin-left:0}
+.indented {
+  margin-left: 25px; }
+
+[dir='rtl'] .indented {
+  margin-right: 25px;
+  margin-left: 0; }
+
+/*# sourceMappingURL=indented.css.map */

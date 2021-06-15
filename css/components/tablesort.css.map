@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/tablesort.scss"],"names":[],"mappings":"AAAA;EAGM,eAAe,EAAA;;AAKrB;EAEI,yBAAyB,EAAA","file":"tablesort.css","sourcesContent":["th {\n  &.is-active {\n    img {\n      display: inline;\n    }\n  }\n}\n\ntd {\n  &.is-active {\n    background-color: #dddddd;\n  }\n}\n"]}

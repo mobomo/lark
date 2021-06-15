@@ -137,13 +137,6 @@ function lark_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     }
     $form['actions']['submit']['#attributes']['class'] = ['media-library-select'];
 
-    // This conditional exists because the media-library-views-form class is
-    // currently added by Classy, but Seven will eventually not use Classy as a
-    // base theme.
-    // @todo remove conditional, keep class addition in
-    //   https://drupal.org/node/3110137
-    // @see https://www.drupal.org/node/3109287
-    // @see classy_form_alter()
     if (!isset($form['#attributes']['class']) || !in_array('media-library-views-form', $form['#attributes']['class'])) {
       $form['#attributes']['class'][] = 'media-library-views-form';
     }
@@ -380,6 +373,7 @@ function lark_preprocess_views_view_fields__media_library(array &$variables) {
  */
 function lark_form_media_library_add_form_alter(array &$form, FormStateInterface $form_state) {
   $form['#attributes']['class'][] = 'media-library-add-form';
+  $form['#attached']['library'][] = 'lark/media_library';
 
   // If there are unsaved media items, apply styling classes to various parts
   // of the form.
