@@ -1,10 +1,11 @@
+@import './variables';
+
 /**
  * Generic elements.
  */
 body {
   color: #333;
   background: #fff;
-  font: normal 81.3%/1.538em "Lucida Grande", "Lucida Sans Unicode", "DejaVu Sans", "Lucida Sans", sans-serif;
 }
 a,
 .link {
@@ -179,4 +180,20 @@ details summary:focus span {
 img {
   max-width: 100%;
   height: auto;
+}
+
+hr,
+.hr {
+  display: block;
+  margin-top: $spacing-medium;
+  margin-bottom: $spacing-medium;
+  outline: none;
+  border: 0;
+  background-color: $light-gray;
+  height: 1px;
+}
+
+details,
+summary {
+  margin-bottom: $spacing-large;
 }

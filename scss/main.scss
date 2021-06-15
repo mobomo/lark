@@ -1,7 +1,7 @@
 @import './base/elements';
-@import './core/functions';
-@import './core/mixins';
-@import './core/variables';
+@import './base/functions';
+@import './base/mixins';
+@import './base/variables';
 // @import './node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
 // @import './node_modules/@fortawesome/fontawesome-free/scss/regular';
 // @import './node_modules/@fortawesome/fontawesome-free/scss/solid';
@@ -9,7 +9,6 @@
 @import './vendor/fa-regular';
 @import './vendor/fa-solid';
 
-@import './base/root';
 @import './base/typography';
 @import './base/layout';
 @import './base/utility';

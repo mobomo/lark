@@ -31,7 +31,7 @@ function styleLintNoErrors() {
 
 function css() {
   return gulp
-    .src('./scss/main.scss')
+    .src(['scss/**/*.s+(a|c)ss'])
     .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(gulp.dest('./css/'))
@@ -45,7 +45,7 @@ function watchFiles() {
 }
 
 const lint = gulp.series(styleLint);
-const build = gulp.series(gulp.parallel(styleLint, css));
+const build = gulp.series(gulp.parallel( css));
 const watch = gulp.series(gulp.parallel(styleLintNoErrors, watchFiles));
 
 exports.lint = lint;
