@@ -1,0 +1,200 @@
+@import '../base/variables';
+@import '../base/mixins';
+@import '../base/_typography.scss';
+
+label,
+.label,
+.fieldset-legend {
+  @extend %small;
+  @include font(sans, bold);
+  display: block;
+  margin-bottom: $spacing-small;
+
+  &.form-required {
+
+    &:after {
+      color: $red;
+      content: ' *';
+    }
+
+  }
+
+  &.option {
+    @extend %base;
+    display: inline-block;
+    font-weight: 400;
+  }
+
+}
+
+// Help vertical spacing look even.
+// As seen on /admin/modules
+td {
+  label {
+    margin-bottom: 0;
+  }
+}
+
+%input,
+.input {
+  display: block;
+  margin-bottom: $spacing-small;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $borders;
+  background-color: $white;
+  cursor: auto;
+  padding: $spacing-large;
+  width: 100%;
+  // line-height: 1rem;
+  color: $dark-gray;
+  font-size: 16px;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+    border-style: solid;
+    border-color: $primary;
+    box-shadow: 0 0 0 2px $primary;
+  }
+}
+
+%input--text,
+.input--text {
+  @extend %input;
+
+  &::placeholder {
+    color: $gray;
+  }
+
+}
+
+%input--select,
+.input--select {
+  @extend %input;
+  padding-right: 24px;
+}
+
+// The class is a core drupal class, have linter igonre it until we modify
+// templates to correct it.
+//
+// sass-lint:disable class-name-format
+.form_textfield,
+textarea,
+.form-textarea {
+  @extend %input--text;
+}
+// sass-lint:enable class-name-format
+
+input {
+
+  &[type='text'],
+  &[type='date'],
+  &[type='email'],
+  &[type='number'],
+  &[type='search'],
+  &[type='tel'],
+  &[type='url'] {
+    @extend %input--text;
+  }
+
+
+  &[type='radio'],
+  &[type='checkbox'] {
+    display: inline-block;
+    position: relative;
+    transition: box-shadow 200ms ease;
+    margin-right: $spacing-medium;
+    box-shadow: 0 0 0 1px $medium-gray;
+    background-color: $white;
+    width: 18px;
+    height: 18px;
+    vertical-align: text-bottom;
+    appearance: none;
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 1px #727780, 0 0 0 6px #e3e3ea; // These colors are not part of the style guide branding.
+    }
+
+    &:checked {
+      border-color: $white;
+      box-shadow: 0 0 0 2px $blue;
+      background-color: $blue;
+
+      &:after {
+        display: block;
+        position: absolute;
+        content: '';
+      }
+    }
+  }
+
+  &[type='radio'] {
+    border-radius: 50%;
+  }
+
+  &[type='checkbox'] {
+    border-radius: 2px;
+
+    &:checked {
+      &:after {
+        top: 0;
+        left: 4px;
+        transform: rotate(45deg);
+        border: solid $white;
+        border-width: 0 3px 3px 0;
+        width: 6px;
+        height: 11px;
+      }
+    }
+  }
+
+  &[type='date'],
+  &[type='time'] {
+    margin-bottom: $spacing-small;
+    padding: $spacing-small;
+  }
+}
+
+select {
+  @extend %input--select;
+  background: url('/themes/contrib/lark/images/icon-arrow-down.svg') $white right 12px bottom 11px no-repeat;
+  background-size: 14px;
+  appearance: none;
+}
+
+.form-actions {
+  padding: 0.5em 0;
+}
+
+.node-form,
+.node-confirm-form {
+
+  .form-actions {
+    .button {
+      margin-right: 10px;
+    }
+  }
+}
+
+.views-exposed-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(216, 217, 224, 0.8);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+
+  .js-form-item {
+    margin: 0 0.75rem 0 0;
+  }
+}
+
+.entity-view-display-form {
+  .form-wrapper {
+    margin-top: 32px;
+  }
+}

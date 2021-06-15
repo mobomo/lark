@@ -1,0 +1,70 @@
+@import '../base/variables';
+@import '../base/mixins';
+
+.drupal-tabs {
+  margin-bottom: 1.5rem;
+  box-shadow: inset 0 -1px 0 0 $light-gray;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.drupal-tabs__items,
+.drupal-tabs--secondary {
+  display: flex;
+  justify-content: left;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  // smartphones, touchscreens
+  @media (hover: none) and (pointer: coarse) {
+    overflow-x: auto;
+  }
+
+}
+
+.drupal-tabs__item,
+.drupal-tabs__item--secondary {
+  background-color: transparent;
+  min-width: 150px;
+}
+
+.drupal-tabs__link,
+.drupal-tabs__item-link--secondary {
+  @include font(sans, bold);
+  display: inline-block;
+  padding: 16px;
+  min-width: 150px;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    background-color: rgba($primary, 0.12);
+    text-decoration: none;
+  }
+
+  .is-active {
+    box-shadow: inset 0 -4px 0 0 $primary;
+    font-weight: 700;
+
+    &:hover {
+      background-color: $white;
+    }
+
+  }
+
+}
+
+.drupal-tabs__link--active {
+  box-shadow: inset 0 -4px 0 0 $primary;
+  font-weight: 700;
+
+  &:hover {
+    background-color: $white;
+  }
+
+}
