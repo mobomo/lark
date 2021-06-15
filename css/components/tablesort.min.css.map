@@ -1,1 +1,1 @@
-{"version":3,"sources":["components/components/tablesort.scss"],"names":[],"mappings":"AAAA,iBAGM,cAAe,CAKrB,aAEI,qBAAyB","file":"tablesort.min.css","sourcesContent":["th {\n  &.is-active {\n    img {\n      display: inline;\n    }\n  }\n}\n\ntd {\n  &.is-active {\n    background-color: #dddddd;\n  }\n}\n"]}
+{"version":3,"sources":["components/components/tablesort.scss"],"names":[],"mappings":"AAAA,iBAGM,cAAe","file":"tablesort.min.css","sourcesContent":["th {\n  &.is-active {\n    img {\n      display: inline;\n    }\n  }\n}\n"]}

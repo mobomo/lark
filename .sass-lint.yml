@@ -55,7 +55,7 @@ rules:
     - exclude: ['respond-to', 'rtl', 'ltr']
   nesting-depth:
     - 2
-    - max-depth: 4
+    - max-depth: 5
   no-color-keywords: 2
   no-color-literals:
     - 0

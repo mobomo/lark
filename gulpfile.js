@@ -109,7 +109,7 @@ task('image-min', () => {
 });
 
 // Default build task.
-task('default', series(['clean', 'css']));
+task('default', series(['clean', 'scss-lint', 'css']));
 
 // Watch task.
 task(

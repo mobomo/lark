@@ -28,7 +28,8 @@
     "kss": "^3.0.0",
     "michelangelo": "^0.8.0",
     "node-sass": "^5.0.0",
-    "postcss": "^8.2.6"
+    "postcss": "^8.2.6",
+    "sass-lint-auto-fix": "^0.21.2"
   },
   "browserslist": [
     "last 3 version"
