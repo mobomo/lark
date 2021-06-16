@@ -15,14 +15,14 @@
     background-image: none; }
   .user-menu__toggle:before {
     font-family: "Font Awesome 5 Free";
-    font-weight: map-deep-get(("sans": (reg: 400, bold: 700), "icon": (reg: 300, solid: 600)), icon, reg);
+    font-weight: 300;
     font-style: normal;
     margin-right: 16px;
     color: #0072c5;
     content: '\f007'; }
   .user-menu__toggle:after {
     font-family: "Font Awesome 5 Free";
-    font-weight: map-deep-get(("sans": (reg: 400, bold: 700), "icon": (reg: 300, solid: 600)), icon, solid);
+    font-weight: 600;
     font-style: normal;
     margin-left: 16px;
     color: #0072c5;

@@ -2,7 +2,7 @@
 .button--secondary,
 .button {
   font-family: "Oxygen", Arial, Verdana, sans-serif;
-  font-weight: map-deep-get(("sans": (reg: 400, bold: 700), "icon": (reg: 300, solid: 600)), sans, bold);
+  font-weight: 700;
   font-style: normal;
   display: inline-block;
   border: 0;

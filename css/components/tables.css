@@ -49,8 +49,8 @@ th,
       height: 12px;
       content: ''; }
 
-tr :not(:last-child),
-.tr :not(:last-child) {
+tr:not(:last-child),
+.tr:not(:last-child) {
   border-bottom: 0.0625rem solid #d7d7df; }
 
 tr:hover,

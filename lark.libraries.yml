@@ -1,13 +1,24 @@
 global-styling:
   version: 1.x
   css:
+    base:
+      css/base/elements.css: { }
+#      css/base/typography.css: { }
+    layout:
+      css/layout/layout.css: {}
+      css/layout/r-sidebar.css: {}
     theme:
       '//fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap:': { type: external, minified: true }
       css/main.css: {}
+      css/vendor/fontawesome.css: { }
     component:
       css/components/action-links.css:
         weight: -10
-      css/components/breadcrumb.css:
+      css/components/banner-search.css:
+        weight: -10
+      css/components/breadcrumbs.css:
+        weight: -10
+      css/components/bulk-actions.css:
         weight: -10
       css/components/button.css:
         weight: -10
@@ -17,11 +28,19 @@ global-styling:
         weight: -10
       css/components/details.css:
         weight: -10
+      css/components/drupal-tabs.css:
+        weight: -10
+      css/components/entity_browser.css:
+        weight: -10
       css/components/exposed-filters.css:
+        weight: -10
+      css/components/exposed-form.css:
         weight: -10
       css/components/field.css:
         weight: -10
       css/components/form.css:
+        weight: -10
+      css/components/forms.css:
         weight: -10
       css/components/icons.css:
         weight: -10
@@ -37,9 +56,21 @@ global-styling:
         weight: -10
       css/components/more-link.css:
         weight: -10
-      css/components/pager.css:
+      css/components/pagination.css:
+        weight: -10
+      css/components/panels.css:
+        weight: -10
+      css/components/shortcuts.css:
+        weight: -10
+      css/components/sidebar-menu.css:
+        weight: -10
+      css/components/site-banner.css:
+        weight: -10
+      css/components/site-branding.css:
         weight: -10
       css/components/tabledrag.css:
+        weight: -10
+      css/components/tables.css:
         weight: -10
       css/components/tableselect.css:
         weight: -10
@@ -49,7 +80,11 @@ global-styling:
         weight: -10
       css/components/textarea.css:
         weight: -10
+      css/components/toolbar.css:
+        weight: -10
       css/components/ui-dialog.css:
+        weight: -10
+      css/components/user-menu.css:
         weight: -10
   js:
     js/sidebar-menu.js: {}
@@ -60,63 +95,93 @@ book-navigation:
   css:
     component:
       css/components/book-navigation.css: {  }
+
 dialog:
   version: VERSION
   css:
     component:
       css/components/dialog.css:
         weight: -10
+
 dropbutton:
   version: VERSION
   css:
     component:
       css/components/dropbutton.css:
         weight: -10
+
 file:
   version: VERSION
   css:
     component:
       css/components/file.css:
         weight: -10
+
 forum:
   version: VERSION
   css:
     component:
       css/components/forum.css:
         weight: -10
+
 image-widget:
   version: VERSION
   css:
     component:
       css/components/image-widget.css: {  }
+
 indented:
   version: VERSION
   css:
     component:
       css/components/indented.css: {  }
+
+modules-page:
+  version: VERSION
+  css:
+    theme:
+      css/theme/modules-page.css: {}
+
+media_embed_error:
+  version: VERSION
+  css:
+    component:
+      css/components/media-embed-error.css: {  }
+
+media_embed_ckeditor_theme:
+  version: VERSION
+  js:
+    js/media_embed_ckeditor.theme.js: {  }
+
 media_library:
   version: VERSION
   css:
     theme:
       css/theme/media-library.css: {  }
+
 messages:
   version: VERSION
   css:
     component:
       css/components/messages.css:
         weight: -10
+      css/components/message.css:
+        weight: -10
+
 node:
   version: VERSION
   css:
     component:
       css/components/node.css:
         weight: -10
+
 progress:
   version: VERSION
   css:
     component:
       css/components/progress.css:
         weight: -10
+
 search-results:
   version: VERSION
   css:
@@ -128,12 +193,9 @@ user:
     component:
       css/components/user.css:
         weight: -10
-media_embed_error:
+
+vertical-tabs:
   version: VERSION
   css:
     component:
-      css/components/media-embed-error.css: {  }
-media_embed_ckeditor_theme:
-  version: VERSION
-  js:
-    js/media_embed_ckeditor.theme.js: {  }
+      css/components/vertical-tabs.css: {}

@@ -145,6 +145,11 @@ function lark_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form_id === 'views_exposed_form' && strpos($form['#id'], 'views-exposed-form-media-library-widget') === 0) {
     $form['actions']['#attributes']['class'][] = 'media-library-view--form-actions';
   }
+
+  // Add library to admin/modules page
+  if ($form_id === 'system_modules') {
+    $form['#attached']['library'][] = 'lark/modules-page';
+  }
 }
 
 /**

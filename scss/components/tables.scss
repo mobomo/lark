@@ -70,7 +70,7 @@ th,
 
 tr,
 .tr {
-  :not(:last-child) {
+  &:not(:last-child) {
     border-bottom: 0.0625rem solid $light-gray;
   }
 

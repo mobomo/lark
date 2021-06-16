@@ -29,7 +29,7 @@
 .drupal-tabs__link,
 .drupal-tabs__item-link--secondary {
   font-family: "Oxygen", Arial, Verdana, sans-serif;
-  font-weight: map-deep-get(("sans": (reg: 400, bold: 700), "icon": (reg: 300, solid: 600)), sans, bold);
+  font-weight: 700;
   font-style: normal;
   display: inline-block;
   padding: 16px;

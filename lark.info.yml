@@ -6,10 +6,36 @@ core_version_requirement: ^8 || ^9
 base theme: false
 dependencies:
   - shortcut
+
 libraries:
   - lark/global-styling
+  - lark/messages
   - core/jquery
   - core/normalize
+
+libraries-extend:
+  user/drupal.user:
+    - lark/user
+  core/drupal.dropbutton:
+    - lark/dropbutton
+  core/drupal.dialog:
+    - lark/dialog
+  file/drupal.file:
+    - lark/file
+  core/drupal.progress:
+    - lark/progress
+  media/media_embed_ckeditor_theme:
+    - lark/media_embed_ckeditor_theme
+  media_library/view:
+    - lark/media_library
+  media_library/widget:
+    - lark/media_library
+  core/drupal.vertical-tabs:
+    - lark/vertical-tabs
+
+
+ckeditor_stylesheets:
+  - css/components/media-embed-error.css
 regions:
   banner: Banner
   header: Header

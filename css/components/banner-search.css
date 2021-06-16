@@ -22,7 +22,7 @@
   .search-block-form .form-item:before,
   .banner-search__item-wrapper:before {
     font-family: "Font Awesome 5 Free";
-    font-weight: map-deep-get(("sans": (reg: 400, bold: 700), "icon": (reg: 300, solid: 600)), icon, solid);
+    font-weight: 600;
     font-style: normal;
     position: absolute;
     top: 17px;

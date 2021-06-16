@@ -1,6 +1,6 @@
 * {
   font-family: "Oxygen", Arial, Verdana, sans-serif;
-  font-weight: map-deep-get(("sans": (reg: 400, bold: 700), "icon": (reg: 300, solid: 600)), sans, reg);
+  font-weight: 400;
   font-style: normal; }
 
 h1,
@@ -87,7 +87,7 @@ a {
 
 dt {
   font-family: "Oxygen", Arial, Verdana, sans-serif;
-  font-weight: map-deep-get(("sans": (reg: 400, bold: 700), "icon": (reg: 300, solid: 600)), sans, bold);
+  font-weight: 700;
   font-style: normal;
   margin-top: 16px;
   margin-bottom: 12px;
@@ -95,13 +95,13 @@ dt {
   font-size: 1.424em; }
   dt a {
     font-family: "Oxygen", Arial, Verdana, sans-serif;
-    font-weight: map-deep-get(("sans": (reg: 400, bold: 700), "icon": (reg: 300, solid: 600)), sans, bold);
+    font-weight: 700;
     font-style: normal;
     text-decoration: none;
     color: #0072c5; }
     dt a:after {
       font-family: "Font Awesome 5 Free";
-      font-weight: map-deep-get(("sans": (reg: 400, bold: 700), "icon": (reg: 300, solid: 600)), icon, solid);
+      font-weight: 600;
       font-style: normal;
       display: inline-block;
       margin-left: 10px;
@@ -134,7 +134,7 @@ label,
 .label,
 .fieldset-legend {
   font-family: "Oxygen", Arial, Verdana, sans-serif;
-  font-weight: map-deep-get(("sans": (reg: 400, bold: 700), "icon": (reg: 300, solid: 600)), sans, bold);
+  font-weight: 700;
   font-style: normal;
   display: block;
   margin-bottom: 6px; }
