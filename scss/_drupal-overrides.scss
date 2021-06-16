@@ -10,27 +10,27 @@
 //// We can override this using libraries-override, but there appear to be some
 //// dependencies I can't figure out with the displace library. So, for now, we'll
 //// just style it out.
-//.sticky-header {
-//
-//  .toolbar-vertical & {
-//    top: 121px !important;
-//  }
-//
-//  .toolbar-horizontal & {
-//    top: 161px !important;
-//  }
-//
-//}
-//
-//// Ckeditor toolbar configuration buttons box sizing to the content instead of border.
-//.ckeditor-toolbar-configuration {
-//
-//  .ckeditor-button {
-//
-//    a {
-//      box-sizing: content-box;
-//    }
-//
-//  }
-//
-//}
+.sticky-header {
+
+  .toolbar-vertical & {
+    top: 121px !important;
+  }
+
+  .toolbar-horizontal & {
+    top: 161px !important;
+  }
+
+}
+
+// Ckeditor toolbar configuration buttons box sizing to the content instead of border.
+.ckeditor-toolbar-configuration {
+
+  .ckeditor-button {
+
+    a {
+      box-sizing: content-box;
+    }
+
+  }
+
+}
