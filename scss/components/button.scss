@@ -50,6 +50,10 @@
     @extend %button--secondary;
   }
 
+  &[data-drupal-selector='edit-cancel'] {
+    text-decoration: none;
+    color: #ffffff;
+  }
 }
 
 .button--small {

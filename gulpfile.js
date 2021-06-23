@@ -39,7 +39,6 @@ task('scss', () => {
     $.sass({
       includePaths: pkg.paths.scss,
     }).on('error', $.sass.logError),
-    $.cached('sass_compile'),
     $.postcss([$.autoprefixer()]),
     $.sourcemaps.write('./'),
     dest(pkg.paths.dist.css),
@@ -111,12 +110,12 @@ task('image-min', () => {
 // Default build task.
 task('default', series(['clean', 'scss-lint', 'css']));
 
+//TODO Add js-lint back later
 // Watch task.
 task(
   'watch',
-  series(['clean', 'scss-lint', 'css', 'js-lint', 'js'], () => {
+  series(['clean', 'scss-lint', 'css'], () => {
     watch(pkg.paths.scss, series(['clean', 'scss-lint', 'css']));
-    watch(pkg.paths.js, series(['js-lint', 'js']));
   })
 );
 

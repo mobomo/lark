@@ -41,6 +41,10 @@
   margin-bottom: 12px;
   width: 100%; }
 
+.button[data-drupal-selector='edit-cancel'] {
+  text-decoration: none;
+  color: #ffffff; }
+
 .button--small {
   margin: 0.75rem 0.5rem 0.75rem 0;
   padding: calc(0.5rem - 1px) calc(1rem - 1px);
