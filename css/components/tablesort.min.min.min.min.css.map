@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/components/components/components/components/tablesort.scss"],"names":[],"mappings":"AAAA,iBAGM,cAAe","file":"tablesort.min.min.min.min.css","sourcesContent":["th {\n  &.is-active {\n    img {\n      display: inline;\n    }\n  }\n}\n"]}

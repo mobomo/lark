@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/components/components/components/components/textarea.scss"],"names":[],"mappings":"AAAA,gCAEI,aAAc,CACd,QAAS,CACT,UAAW,CACX,6BAAsB,CAAtB,qBAAsB","file":"textarea.min.min.min.min.css","sourcesContent":[".form-textarea-wrapper {\n  textarea {\n    display: block;\n    margin: 0;\n    width: 100%;\n    box-sizing: border-box;\n  }\n}\n"]}
