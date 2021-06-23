@@ -1,1 +1,0 @@
-{"version":3,"sources":["components/components/components/components/ui-dialog.scss"],"names":[],"mappings":"AAAA,8BAEI,eAAgB","file":"ui-dialog.min.min.min.css","sourcesContent":[".ui-dialog {\n  .ui-dialog-content {\n    position: static;\n  }\n}\n"]}

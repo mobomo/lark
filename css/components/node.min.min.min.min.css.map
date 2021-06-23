@@ -1,1 +1,0 @@
-{"version":3,"sources":["components/components/components/components/components/node.scss"],"names":[],"mappings":"AAKA,mBACE,wBAAyB","file":"node.min.min.min.min.css","sourcesContent":["/**\n * @file\n * Visual styles for nodes.\n */\n\n.node--unpublished {\n  background-color: #fff4f4;\n}\n"]}
