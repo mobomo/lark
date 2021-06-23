@@ -114,10 +114,11 @@ task('default', series(['clean', 'scss-lint', 'css']));
 // Watch task.
 task(
   'watch',
-  series(['clean', 'css', 'js-lint'], () => {
-    watch(pkg.paths.scss, series(['css']));
-    watch(pkg.paths.js, series(['js-lint']));
+  series(['clean', 'scss-lint', 'css', 'js-lint', 'js'], () => {
+    watch(pkg.paths.scss, series(['clean', 'scss-lint', 'css']));
+    watch(pkg.paths.js, series(['js-lint', 'js']));
   })
 );
+
 // Lint task.
 task('lint', series(['js-lint', 'scss-lint']));
