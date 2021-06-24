@@ -208,7 +208,7 @@ input[type='radio'], input[type='checkbox'] {
   -o-transition: box-shadow 200ms ease;
   transition: box-shadow 200ms ease;
   transition: box-shadow 200ms ease, -webkit-box-shadow 200ms ease;
-  margin-right: 12px;
+  margin-right: 4px;
   -webkit-box-shadow: 0 0 0 1px #8e929c;
           box-shadow: 0 0 0 1px #8e929c;
   background-color: #ffffff;

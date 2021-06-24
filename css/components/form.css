@@ -72,8 +72,10 @@ label.option {
   margin-top: 0.4em;
   margin-bottom: 0.4em; }
 
-.form-radios .form-item {
-  margin: 0.4em 0.4em 0.4em 0; }
+.form-radios {
+  margin-right: 4px; }
+  .form-radios .form-item {
+    margin: 0.4em 1.8em 0.4em 0; }
 
 .form-type-radio .description {
   margin-left: 2.4em; }
