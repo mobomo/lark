@@ -29,7 +29,6 @@ td {
 %input,
 .input {
   display: block;
-  margin-bottom: $spacing-small;
   border-width: 1px;
   border-style: solid;
   border-color: $borders;
@@ -156,7 +155,7 @@ select {
 }
 
 .form-actions {
-  padding: 0.5em 0;
+  padding: 0.25em 0;
 }
 
 .node-form,
