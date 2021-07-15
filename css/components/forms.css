@@ -154,7 +154,6 @@ textarea,
 .input--select,
 .input {
   display: block;
-  margin-bottom: 6px;
   border-width: 1px;
   border-style: solid;
   border-color: #8e929c;
@@ -260,7 +259,7 @@ select {
           appearance: none; }
 
 .form-actions {
-  padding: 0.5em 0; }
+  padding: 0.25em 0; }
 
 .node-form .form-actions .button,
 .node-confirm-form .form-actions .button {
