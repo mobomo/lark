@@ -2,12 +2,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100px;
-  height: 75px;
-  text-align: center; }
+  width: 300px;
+  height: 80px; }
 
 .site-branding__home-link img {
-  max-width: 163px;
   height: 100%; }
 
 /*# sourceMappingURL=site-branding.css.map */
