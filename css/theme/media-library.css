@@ -255,7 +255,10 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+  margin-bottom: 1em; }
+  .media-library-views-form__bulk_form .form-item-action {
+    margin-bottom: 0; }
 
 .media-library-view .form--inline {
   display: -webkit-box;
@@ -266,8 +269,7 @@
 
 .media-library-view .form-actions {
   -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin: 0.75em 0; }
+      align-self: flex-end; }
 
 .media-library-view .media-library-view--form-actions {
   -ms-flex-item-align: end;

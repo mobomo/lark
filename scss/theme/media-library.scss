@@ -346,6 +346,12 @@
 .media-library-views-form__bulk_form {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 1em;
+
+  .form-item-action {
+    margin-bottom: 0;
+  }
+
 }
 // sass-lint:enable class-name-format
 
@@ -357,7 +363,6 @@
 
   .form-actions {
     align-self: flex-end;
-    margin: 0.75em 0;
   }
 
   .media-library-view--form-actions {

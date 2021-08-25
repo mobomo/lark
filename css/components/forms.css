@@ -280,8 +280,9 @@ select {
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1.5rem; }
-  .views-exposed-form .js-form-item {
-    margin: 0 0.75rem 0 0; }
+  .views-exposed-form .js-form-item,
+  .views-exposed-form .form-actions {
+    margin: 0 0.75rem 1rem 0; }
 
 .entity-view-display-form .form-wrapper {
   margin-top: 32px; }
