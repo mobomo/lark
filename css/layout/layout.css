@@ -16,6 +16,9 @@
   .toolbar-vertical .l-sidebar__container {
     top: calc(39px + 82px + 2em); }
 
+.toolbar-oriented .toolbar-bar {
+  z-index: 99999; }
+
 .l-content {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -24,7 +27,7 @@
 .l-banner {
   position: sticky;
   top: 0;
-  z-index: 501;
+  z-index: 99999;
   background-color: #ffffff; }
   .toolbar-horizontal .l-banner {
     top: 39px; }
