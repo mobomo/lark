@@ -18,6 +18,8 @@
 
 .toolbar-oriented .toolbar-bar {
   z-index: 99999; }
+  .toolbar-oriented .toolbar-bar .menu-item {
+    z-index: 99999; }
 
 .l-content {
   -webkit-box-flex: 1;
@@ -27,7 +29,7 @@
 .l-banner {
   position: sticky;
   top: 0;
-  z-index: 99999;
+  z-index: 99998;
   background-color: #ffffff; }
   .toolbar-horizontal .l-banner {
     top: 39px; }

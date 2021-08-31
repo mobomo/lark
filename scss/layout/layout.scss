@@ -41,6 +41,10 @@
 .toolbar-oriented {
   .toolbar-bar {
     z-index: 99999;
+
+    .menu-item {
+      z-index: 99999;
+    }
   }
 }
 
@@ -51,7 +55,7 @@
 .l-banner {
   position: sticky;
   top: 0;
-  z-index: 99999;
+  z-index: 99998;
   background-color: $white;
 
   .toolbar-horizontal & {
