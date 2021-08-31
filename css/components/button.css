@@ -1,6 +1,6 @@
-.button.form-submit,
-.button--secondary,
-.button {
+.button.form-submit:not(.js-hide),
+.button--secondary:not(.js-hide),
+.button:not(.js-hide) {
   font-family: "Oxygen", Arial, Verdana, sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -16,11 +16,11 @@
   text-decoration: none;
   line-height: 1rem;
   color: #ffffff; }
-  .button.form-submit:hover,
-  .button--secondary:hover, .button.form-submit:focus,
-  .button--secondary:focus,
-  .button:hover,
-  .button:focus {
+  .button.form-submit:not(.js-hide):hover,
+  .button--secondary:not(.js-hide):hover, .button.form-submit:not(.js-hide):focus,
+  .button--secondary:not(.js-hide):focus,
+  .button:not(.js-hide):hover,
+  .button:not(.js-hide):focus {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.21)), to(rgba(0, 0, 0, 0.21)));
     background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.21));
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.21));

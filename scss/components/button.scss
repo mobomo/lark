@@ -3,25 +3,26 @@
 
 %button,
 .button {
-  @include font(sans, bold);
-  display: inline-block;
-  border: 0;
-  box-shadow: none;
-  background-color: $primary;
-  cursor: pointer;
-  padding: $spacing-large ($spacing-medium * 2);
-  min-height: 48px;
-  text-align: center;
-  text-decoration: none;
-  line-height: 1rem;
-  color: $white;
-
-  &:hover,
-  &:focus {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.21));
+  &:not(.js-hide) {
+    @include font(sans, bold);
+    display: inline-block;
+    border: 0;
+    box-shadow: none;
+    background-color: $primary;
+    cursor: pointer;
+    padding: $spacing-large ($spacing-medium * 2);
+    min-height: 48px;
+    text-align: center;
     text-decoration: none;
-  }
+    line-height: 1rem;
+    color: $white;
 
+    &:hover,
+    &:focus {
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.21), rgba(0, 0, 0, 0.21));
+      text-decoration: none;
+    }
+  }
 }
 
 %button--secondary,
