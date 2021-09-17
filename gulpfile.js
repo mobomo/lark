@@ -15,7 +15,7 @@ sass.compiler = require('node-sass');
 function styleLint() {
   const configFile = jsYaml.safeLoad(fs.readFileSync('.sass-lint.yml', 'utf-8'));
   return gulp
-    .src('scss/**/*.s+(a|c)ss')
+    .src(['scss/**/*.s+(a|c)ss', '!scss/components/_dialog.scss', '!scss/components/_inline-form.scss', '!scss/base/elements.scss'])
     .pipe(sassLint(configFile))
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError())
@@ -31,7 +31,7 @@ function styleLintNoErrors() {
 
 function css() {
   return gulp
-    .src('./scss/main.scss')
+    .src(['scss/**/*.s+(a|c)ss'])
     .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(gulp.dest('./css/'))
@@ -45,7 +45,7 @@ function watchFiles() {
 }
 
 const lint = gulp.series(styleLint);
-const build = gulp.series(gulp.parallel(styleLint, css));
+const build = gulp.series(gulp.parallel( css));
 const watch = gulp.series(gulp.parallel(styleLintNoErrors, watchFiles));
 
 exports.lint = lint;
