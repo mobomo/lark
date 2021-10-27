@@ -4,8 +4,6 @@ description: 'An Administrative theme from Mobomo.'
 core: 8.x
 core_version_requirement: ^8 || ^9
 base theme: false
-dependencies:
-  - shortcut
 libraries:
   - lark/global-styling
   - core/jquery
