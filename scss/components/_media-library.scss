@@ -1,0 +1,1042 @@
+/**
+ * @file media-library.css
+
+ * Styling for Media Library.
+ */
+
+.media-library-wrapper {
+  display: flex;
+  margin: -1em;
+
+  .view-header {
+    text-align: left;
+  }
+
+  .views-display-link {
+    padding-right: 22px;
+    padding-left: 0;
+  }
+
+  .views-display-link-widget {
+    background-position: right 0;
+  }
+
+  .views-display-link-widget__table {
+    background-position: right 0;
+  }
+
+
+  .media-library-view {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .view-content {
+      flex: 0 0 100%;
+    }
+
+  }
+
+  .view-header {
+    align-self: flex-end;
+    margin: 1em 0;
+    text-align: right;
+  }
+
+  .views-display-link {
+    margin: 0;
+    padding-left: 22px;
+    line-height: 16px;
+    color: #333333;
+    font-size: 15px;
+  }
+
+  .views-display-link {
+
+    .is-active {
+      font-weight: bold;
+    }
+
+  }
+
+  .views-display-link-widget {
+    margin-right: 15px;
+    background: url('/core/misc/icons/333333/grid.svg') left 0 no-repeat;
+  }
+
+  .views-display-link-widget__table {
+    background: url('/core/misc/icons/333333/table.svg') left 0 no-repeat;
+  }
+
+}
+
+/**
+ * @todo Reuse or build on vertical tabs styling for the media library menu.
+ *   https://www.drupal.org/project/drupal/issues/3023767
+ */
+.media-library-menu {
+  display: block;
+  margin: 0;
+  border-bottom: 1px solid #cccccc;
+  background-color: #e6e5e1;
+  padding: 0;
+  width: 600px;
+  max-width: 20%;
+  line-height: 1;
+
+  li {
+    display: block;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+/* Generic media library view styles. */
+.media-library-menu__link {
+  display: block;
+  position: relative;
+  border-bottom: 1px solid #b3b2ad;
+  background-color: #f2f2f0;
+  padding: 15px;
+  text-decoration: none;
+  text-shadow: 0 1px hsla(0, 0%, 100%, 0.6);
+  box-sizing: border-box;
+
+  &:active {
+    outline: none;
+    background: #fcfcfa;
+    text-shadow: none;
+  }
+
+  &:hover {
+    background: #fcfcfa;
+    text-shadow: none;
+  }
+
+  &:focus {
+    outline: none;
+    background: #fcfcfa;
+    text-shadow: none;
+  }
+
+  .active {
+    z-index: 1;
+    margin-right: -1px;
+    border-right: 1px solid #fcfcfa;
+    border-bottom: 1px solid #b3b2ad;
+    box-shadow: 0 5px 5px -5px hsla(0, 0%, 0%, 0.3);
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+}
+
+[dir='rtl'] {
+
+  .media-library-menu {
+    margin: 0;
+  }
+
+  .media-library-menu__link {
+
+    .active {
+      margin-right: 0;
+      margin-left: -1px;
+      border-right: 0;
+      border-left: 1px solid #fcfcfa;
+    }
+
+  }
+
+  .media-library-content {
+    border-right: 1px solid #b3b2ad;
+    border-left: 0;
+  }
+
+  .media-library-select-all {
+
+    input {
+      margin-left: 10px;
+    }
+
+  }
+
+  .media-library-item__status {
+    right: 5px;
+    left: auto;
+  }
+
+  .media-library-item__click-to-select-checkbox {
+    right: 16px;
+    left: auto;
+  }
+
+}
+
+.media-library-content {
+  outline: none;
+  border-left: 1px solid #b3b2ad;
+  padding: 1em;
+  width: 100%;
+}
+
+.media-library-add-form--without-input {
+
+  .form-item {
+    margin: 0 0 1em;
+  }
+
+}
+
+/**
+ * Remove outline from added media list.
+ *
+ * The added media list receives focus after adding new media, but since it is
+ * not an interactive element, it does not need an outline.
+ */
+.media-library-add-form__added-media {
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+
+.media-library-add-form__input-wrapper {
+  border: 1px solid #bfbfbf;
+  border-radius: 2px;
+  background: #fcfcfa;
+  padding: 16px;
+}
+
+.media-library-add-form--upload {
+
+  .media-library-add-form--without-input {
+    .form-item-upload {
+      margin-bottom: 0;
+    }
+  }
+
+}
+
+.media-library-add-form {
+
+  .file-upload-help {
+    margin: 8px 0 0;
+  }
+
+}
+
+.media-library-add-form--oembed {
+
+  .media-library-add-form__input-wrapper {
+    display: flex;
+  }
+
+  .media-library-add-form--without-input {
+
+    .form-item-url {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.media-library-add-form-oembed-url {
+  width: 100%;
+}
+
+.button {
+
+  .media-library-add-form-oembed-submit {
+    align-self: center;
+  }
+
+  .media-library-open-button {
+    margin-bottom: 1em;
+    margin-left: 0;
+  }
+
+}
+
+.media-library-add-form__selected-media {
+  margin-top: 1em;
+
+  .details-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10px 1em;
+  }
+
+  .media-library-item {
+
+    .field--name-thumbnail {
+
+      img {
+        height: 100px;
+      }
+
+    }
+
+  }
+
+  .media-library-item--small {
+    width: 33.3%;
+  }
+
+}
+
+.media-library-select-all {
+  flex-basis: 100%;
+  margin: 10px 8px;
+  width: 100%;
+
+  input {
+    margin-right: 10px;
+  }
+
+}
+
+.media-library-views-form {
+  display: flex;
+  flex-wrap: wrap;
+
+  >.form-actions {
+    flex-basis: 100%;
+  }
+
+}
+
+.media-library-selection {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.media-library-view {
+
+  .form--inline {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+}
+
+.media-library-views-form__rows {
+  display: flex;
+  flex-basis: 100%;
+  margin: 0 -8px;
+
+  .form-item {
+    margin-right: 8px;
+  }
+
+}
+
+@media screen and (max-width: 37.5em) {
+
+  .media-library-add-form--oembed {
+
+    .media-library-add-form__input-wrapper {
+      display: block;
+    }
+
+  }
+
+}
+
+.media-library-views-form__rows {
+  display: flex;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  margin: 0 -8px;
+}
+
+.media-library-views-form__header {
+
+  .form-item {
+    margin-right: 8px;
+  }
+
+}
+
+
+.media-library-view {
+
+  .form-actions {
+    align-self: flex-end;
+    margin: 0.75em 0;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .media-library-view {
+
+    .form-actions {
+      flex-basis: 100%;
+    }
+
+  }
+
+}
+
+.media-library-view {
+
+  .media-library-view--form-actions {
+    align-self: flex-end;
+    clear: left;
+    margin: 0.75em 0;
+  }
+
+}
+
+/**
+ * Override the table display of the visually hidden labels.
+ *
+ * The width, height and overflow properties in the styles for the
+ * .visually-hidden class do not work correctly if the element has a table
+ * display.
+ */
+/* Media library widget view styles. */
+/**
+ * Style the media library grid items.
+ */
+/**
+* The media library item container receives screen reader focus when items are
+* removed. Since it is not an interactive element, it does not need an
+* outline.
+*/
+/* Media library widget weight field styles. */
+/* The selected items in the add form should be shown a bit smaller. */
+/**
+ * By default, the dialog is too narrow to be usable.
+ * @see Drupal.ckeditor.openDialog()
+ */
+/* Change the width for the modal and widget since there is less space. */
+/* The selected items in the add form should be shown a bit smaller. */
+/* Change the width for the modal and widget since there is less space. */
+/* The selected items in the add form should be shown a bit smaller. */
+.media-library-item {
+
+  label {
+    display: inline-block;
+  }
+
+  position: relative;
+}
+
+.media-library-item--grid {
+  justify-content: center;
+  outline: none;
+  background: #ffffff;
+  padding: 8px;
+  width: 50%;
+  vertical-align: top;
+  box-sizing: border-box;
+
+  &:before {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+    border: 1px solid #dbdbdb;
+    width: calc(100% - 16px);
+    height: calc(100% - 16px);
+    content: '';
+    pointer-events: none;
+  }
+
+  &.is-hover {
+
+    &:before {
+      top: 5px;
+      left: 5px;
+      border-width: 3px;
+      border-radius: 3px;
+      border-color: #40b6ff;
+    }
+
+  }
+
+  &.checked {
+
+    &:before {
+      top: 5px;
+      left: 5px;
+      border-width: 3px;
+      border-radius: 3px;
+      border-color: #40b6ff;
+    }
+
+  }
+
+  &.is-focus {
+
+    &:before {
+      top: 5px;
+      left: 5px;
+      border-width: 3px;
+      border-radius: 3px;
+      border-color: #40b6ff;
+    }
+
+  }
+
+  .form-item {
+    margin: 0.75em;
+  }
+
+  .field--name-thumbnail {
+    overflow: hidden;
+    text-align: center;
+
+    img {
+      height: 180px;
+      object-fit: contain;
+      object-position: center center;
+    }
+
+  }
+
+  .media-library-item__name {
+    white-space: normal;
+  }
+
+}
+
+.media-library-widget-modal {
+
+  .ui-dialog-buttonpane {
+    display: flex;
+    align-items: center;
+
+    .form-actions {
+      flex: 1;
+    }
+
+  }
+
+}
+
+.ui-dialog--narrow {
+
+  .media-library-widget-modal {
+    max-width: 75%;
+  }
+
+}
+
+@media screen and (min-width: 45em) {
+
+  .media-library-item--grid {
+    width: 33.3%;
+  }
+
+  .media-library-widget-modal {
+
+    .media-library-item--grid {
+      width: 50%;
+    }
+
+  }
+
+  .media-library-selection {
+
+    .media-library-item--grid {
+      width: 50%;
+    }
+
+  }
+
+  .media-library-add-form__selected-media {
+
+    .media-library-item--small {
+      width: 25%;
+    }
+
+  }
+
+}
+
+@media screen and (min-width: 60em) {
+
+  .media-library-item--grid {
+    width: 25%;
+  }
+
+  .media-library-widget-modal {
+
+    .media-library-item--grid {
+      width: 33.3%;
+    }
+
+  }
+
+  .media-library-selection {
+
+    .media-library-item--grid {
+      width: 33.3%;
+    }
+
+  }
+
+  .media-library-add-form__selected-media {
+
+    .media-library-item--small {
+      width: 16.6%;
+    }
+
+  }
+
+}
+
+@media screen and (min-width: 77em) {
+
+  .media-library-item--grid {
+    width: 16.6%;
+  }
+
+  .media-library-widget-modal {
+
+    .media-library-item--grid {
+      width: 25%;
+    }
+
+  }
+
+  .media-library-selection {
+
+    .media-library-item--grid {
+      width: 25%;
+    }
+
+  }
+
+  .media-library-add-form__selected-media {
+
+    .media-library-item--small {
+      width: 16.6%;
+    }
+
+  }
+
+}
+
+.media-library-item__click-to-select-checkbox {
+  display: block;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1;
+
+  input {
+    width: 20px;
+    height: 20px;
+  }
+
+  .form-item {
+    margin: 0;
+  }
+
+}
+
+.media-library-item__click-to-select-trigger {
+  cursor: pointer;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Media library item table styles. */
+/* Media library entity view display styles. */
+.media-library-item--table {
+  img {
+    max-width: 100px;
+    height: auto;
+  }
+}
+
+.media-library-item__preview {
+  padding-bottom: 34px;
+}
+
+.field--widget-media-library-widget {
+
+  .media-library-item__preview {
+    cursor: move;
+  }
+
+  .js-media-library-item {
+    &:only-child {
+
+      .media-library-item__preview {
+        cursor: inherit;
+      }
+
+    }
+  }
+}
+
+.media-library-item__status {
+  position: absolute;
+  top: 40px;
+  left: 5px;
+  background: #666666;
+  padding: 5px 10px;
+  color: #e4e4e4;
+  font-size: 12px;
+  font-style: italic;
+  pointer-events: none;
+}
+
+.media-library-item__name {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 5px 10px;
+  width: 100%;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #ffffff;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+
+@media screen and (min-width: 77em) {
+  .media-library-item--grid {
+    width: 16.6%;
+  }
+
+  /* Change the width for the modal and widget since there is less space. */
+  .media-library-widget-modal {
+
+    .media-library-item--grid,
+    .media-library-selection {
+
+      .media-library-item--grid {
+        width: 25%;
+      }
+
+    }
+
+  }
+
+  /* The selected items in the add form should be shown a bit smaller. */
+  .media-library-add-form__selected-media {
+
+    .media-library-item--small {
+      width: 16.6%;
+    }
+
+  }
+}
+
+.media-library-item__click-to-select-checkbox {
+  display: block;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1;
+
+  input {
+    width: 20px;
+    height: 20px;
+  }
+
+  .form-item {
+    margin: 0;
+  }
+
+}
+
+.media-library-item--table {
+
+  img {
+    max-width: 100px;
+    height: auto;
+  }
+
+}
+
+.media-library-item__preview {
+  padding-bottom: 34px;
+}
+
+.field--widget-media-library-widget {
+
+  .media-library-item__preview {
+    cursor: move;
+  }
+
+  .js-media-library-item {
+
+    &:only-child {
+
+      .media-library-item__preview {
+        cursor: inherit;
+      }
+
+    }
+
+  }
+
+}
+
+.media-library-item__status {
+  position: absolute;
+  top: 40px;
+  left: 5px;
+  background: #666666;
+  padding: 5px 10px;
+  color: #e4e4e4;
+  font-size: 12px;
+  font-style: italic;
+  pointer-events: none;
+}
+
+.media-library-item__attributes {
+  display: block;
+  bottom: 0;
+  background: #ffffff;
+  max-width: calc(100% - 10px);
+  max-height: calc(100% - 50px);
+  overflow: hidden;
+
+  &:hover {
+
+    .media-library-item__name {
+      white-space: normal;
+    }
+
+  }
+
+}
+
+.media-library-item__type {
+  color: #696969;
+  font-size: 12px;
+}
+
+.media-library-item--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.media-library-widget {
+  position: relative;
+}
+
+.media-library-widget__toggle-weight {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.media-library-selection {
+  margin: 1em -8px;
+}
+
+.media-library-item__edit {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  transition: 0.2s border-color;
+  z-index: 1;
+  margin: 5px;
+  border: 2px solid #cccccc;
+  border-radius: 20px;
+  background: url('/core/misc/icons/787878/pencil.svg') #ffffff center no-repeat;
+  background-size: 13px;
+  padding: 0;
+  width: 21px;
+  height: 21px;
+  overflow: hidden;
+  text-shadow: none;
+  color: transparent;
+  font-size: 0;
+
+  &:hover {
+    border: 2px solid #40b6ff;
+  }
+
+  &:focus {
+    border: 2px solid #40b6ff;
+  }
+
+}
+
+
+.media-library-item__remove {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: 0.2s border-color;
+  z-index: 1;
+  margin: 5px;
+  border: 2px solid #cccccc;
+  border-radius: 20px;
+  background: url('/core/misc/icons/787878/ex.svg') #ffffff center no-repeat;
+  background-size: 13px;
+  padding: 0;
+  width: 21px;
+  height: 21px;
+  overflow: hidden;
+  text-shadow: none;
+  color: transparent;
+  font-size: 0;
+
+  &:hover {
+    border: 2px solid #40b6ff;
+  }
+
+  &:focus {
+    border: 2px solid #40b6ff;
+  }
+
+}
+
+.media-library-item__remove {
+
+  .button {
+    position: absolute;
+    top: 10px;
+    transition: 0.2s border-color;
+    z-index: 1;
+    margin: 5px;
+    border: 2px solid #cccccc;
+    border-radius: 20px;
+    background: url('/core/misc/icons/787878/ex.svg') #ffffff center no-repeat;
+    background-size: 13px;
+    padding: 0;
+    width: 21px;
+    height: 21px;
+    overflow: hidden;
+    text-shadow: none;
+    color: transparent;
+    font-size: 0;
+
+    &:active {
+      border: 2px solid #40b6ff;
+    }
+
+    &:hover {
+      border: 2px solid #40b6ff;
+    }
+
+    &:focus {
+      border: 2px solid #40b6ff;
+    }
+
+  }
+
+}
+
+.media-library-add-form__media {
+  display: flex;
+  position: relative;
+  outline: none;
+  border-bottom: 1px solid #c0c0c0;
+  padding: 1em 0;
+
+  &:first-child {
+    padding-top: 0;
+
+    .media-library-add-form__remove-button {
+
+      &[type='submit'] {
+        top: 5px;
+      }
+
+    }
+
+  }
+
+  &:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+}
+
+.media-library-add-form__preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  background: #ebebeb;
+  width: 220px;
+}
+
+.media-library-add-form__remove-button {
+
+  &[type='submit'] {
+    position: absolute;
+    top: 25px;
+    right: 6px; /* LTR */
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent url('/core/misc/icons/787878/ex.svg') right 2px no-repeat; /* LTR */
+    padding: 2px 20px 2px 2px; /* LTR */
+    width: auto;
+    text-transform: lowercase;
+    line-height: 16px;
+    color: transparent;
+    font-weight: normal;
+  }
+
+  &:focus {
+    border: 0;
+    background: transparent url('/core/misc/icons/787878/ex.svg') right 2px no-repeat;
+    color: #787878;
+  }
+
+  &:hover {
+    border: 0;
+    box-shadow: none;
+    background: transparent url('/core/misc/icons/ee0000/ex.svg') right 2px no-repeat;
+    color: #ee0000;
+  }
+
+}
+
+.media-library-add-form__remove-button {
+
+  .button {
+    border: 0;
+    background: transparent url('/core/misc/icons/787878/ex.svg') right 2px no-repeat;
+    color: #787878;
+
+    &:hover {
+      box-shadow: none;
+      background: transparent url('/core/misc/icons/ee0000/ex.svg') right 2px no-repeat;
+      color: #ee0000;
+    }
+
+  }
+
+}
+
+.views-live-preview {
+
+  .media-library-view {
+
+    .views-row {
+
+      + {
+
+        .views-row {
+          margin-top: 0;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+

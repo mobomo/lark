@@ -251,3 +251,18 @@ function lark_forms_attach_views_display_id(&$form, $views_display_id) {
     lark_forms_attach_views_display_id($form[$child], $views_display_id);
   }
 }
+
+/**
+ * Views media_library preprocess hook.
+ *
+ * @param $variables
+ */
+function lark_preprocess_views_view__media_library(&$variables) {
+  // Make header classes BEM compatible by adding a new class 'views-display-link-widget__table'.
+  if (isset($variables['header']['display_link_table']['#options']['attributes']['class'])) {
+    $table_classes = $variables['header']['display_link_table']['#options']['attributes']['class'];
+    if (in_array('views-display-link-widget_table', $table_classes)) {
+      $variables['header']['display_link_table']['#options']['attributes']['class'] = array_merge($table_classes, array_diff(['views-display-link-widget__table'], $table_classes));
+    }
+  }
+}
